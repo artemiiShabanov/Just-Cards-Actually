@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="JustCardsActually"
+run/main_scene="uid://cy187l1134jxc"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Player="*res://Global/player.gd"
+Storage="*res://Global/storage.gd"
 
 [rendering]
 

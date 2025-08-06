@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpe04jrep5o6u"]
+
+[ext_resource type="Script" uid="uid://b4k3un8smf0sh" path="res://Debug/debug.gd" id="1_lcwkr"]
+
+[node name="Debug" type="Node2D"]
+script = ExtResource("1_lcwkr")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 1153.0
+offset_bottom = 649.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="BoosterTime" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Reset timer
+"
+
+[node name="AddDust" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Add 50 dust
+"
+
+[node name="AddAllCards" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Add all cards"
+
+[node name="AddL" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Add L"
+
+[node name="AddW" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Add W
+"
+
+[node name="AddF" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Add F
+"
+
+[node name="AddE" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Add E
+"
+
+[node name="Clear" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Burn"
+
+[node name="Exit" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/BoosterTime" to="." method="_on_booster_time_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/AddDust" to="." method="_on_add_dust_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/AddAllCards" to="." method="_on_add_all_cards_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/AddL" to="." method="_on_add_l_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/AddW" to="." method="_on_add_w_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/AddF" to="." method="_on_add_f_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/AddE" to="." method="_on_add_e_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
