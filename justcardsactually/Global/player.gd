@@ -34,6 +34,9 @@ var rng = RandomNumberGenerator.new()
 var collection: Array
 var dust: int
 var booster_available: bool
+var dust_booster_available: bool:
+	get:
+		return dust >= BOOSTER_COST
 
 func _ready() -> void:
 	Storage.load_from_cache()
@@ -121,6 +124,7 @@ func accept_booster(cards: Array, spent_dust: int, is_free: bool):
 	
 	_mutate(is_free, filtered_cards, dust_diff)
 
+
 func _generate_card(level: Card.LEVEL) -> Card:
 	var suit = Card.SUIT.values().pick_random() # ??
 	var rank = Card.ranks_for_level(level).pick_random()
@@ -169,7 +173,7 @@ func add_dust(count: int):
 
 func allow_bootser(allow: bool):
 	booster_available = allow
-	Storage.set_value(LAST_BOOSTER_DATE_KEY, null)
+	Storage.set_value(LAST_BOOSTER_DATE_KEY, null if allow else Time.get_date_dict_from_system())
 	Storage.save_to_cache()
 	
 	booster_update.emit()

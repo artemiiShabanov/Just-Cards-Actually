@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://br3j7dgfpkvuy"]
+
+[ext_resource type="Script" uid="uid://brej2wxhfce8l" path="res://Common/rotator.gd" id="1_gkdhj"]
+
+[node name="Rotator" type="Node3D"]
+script = ExtResource("1_gkdhj")

@@ -3,8 +3,14 @@ extends Node2D
 func _on_booster_time_pressed() -> void:
 	Player.allow_bootser(true)
 
+func _on_anti_booster_time_pressed() -> void:
+	Player.allow_bootser(false)
+	
 func _on_add_dust_pressed() -> void:
 	Player.add_dust(50)
+
+func _on_remove_dust_pressed() -> void:
+	Player.add_dust(-25)
 
 func _on_add_all_cards_pressed() -> void:
 	Player.add_cards(_create_all())

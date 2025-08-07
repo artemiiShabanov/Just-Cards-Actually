@@ -1,4 +1,5 @@
 extends Control
+class_name HUD
 
 enum STATE { BOOSTER, COLLECTION }
 signal state_changed(state: STATE)

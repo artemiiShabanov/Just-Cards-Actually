@@ -1,11 +1,16 @@
 extends Node3D
 
+@onready var hud = $CanvasLayer/HUD
+@onready var booster_scene = $Booster
+@onready var collection_scene = $Collection
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	collection_scene.visible = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_hud_state_changed(state: int) -> void:
+	if state == HUD.STATE.BOOSTER:
+		booster_scene.visible = true
+		collection_scene.visible = false
+	elif state == HUD.STATE.COLLECTION:
+		booster_scene.visible = false
+		collection_scene.visible = true

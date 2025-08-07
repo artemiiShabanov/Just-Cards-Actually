@@ -18,10 +18,18 @@ layout_mode = 2
 text = "Reset timer
 "
 
+[node name="AntiBoosterTime" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Kill timer"
+
 [node name="AddDust" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Add 50 dust
+text = "+50 dust
 "
+
+[node name="RemoveDust" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "-25 dust"
 
 [node name="AddAllCards" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -55,7 +63,9 @@ layout_mode = 2
 text = "Exit"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/BoosterTime" to="." method="_on_booster_time_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/AntiBoosterTime" to="." method="_on_anti_booster_time_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/AddDust" to="." method="_on_add_dust_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RemoveDust" to="." method="_on_remove_dust_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/AddAllCards" to="." method="_on_add_all_cards_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/AddL" to="." method="_on_add_l_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/AddW" to="." method="_on_add_w_pressed"]

@@ -1,11 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy187l1134jxc"]
+[gd_scene load_steps=7 format=3 uid="uid://cy187l1134jxc"]
 
 [ext_resource type="Script" uid="uid://dmcetadb85jth" path="res://Main/main.gd" id="1_lxy7q"]
-[ext_resource type="PackedScene" uid="uid://c7w0s2hx2atic" path="res://Main/HUD.tscn" id="2_83ytx"]
+[ext_resource type="PackedScene" uid="uid://c7w0s2hx2atic" path="res://Main/HUD/HUD.tscn" id="2_83ytx"]
+[ext_resource type="PackedScene" uid="uid://ddymgjpfxg3o6" path="res://Collection/Collection.tscn" id="3_amygn"]
+[ext_resource type="PackedScene" uid="uid://drun6cha176c2" path="res://Booster/Booster.tscn" id="4_ps1la"]
+[ext_resource type="Texture2D" uid="uid://ubh4325m3mop" path="res://resources/Assets/Bliss_(Windows_XP).png" id="5_6aewd"]
+
+[sub_resource type="Environment" id="Environment_ps1la"]
+background_mode = 3
+sky_custom_fov = 46.4
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_lxy7q")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Hud" parent="CanvasLayer" instance=ExtResource("2_83ytx")]
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("2_83ytx")]
+
+[node name="Collection" parent="." instance=ExtResource("3_amygn")]
+transform = Transform3D(3.07, 0, 0, 0, 3.07, 0, 0, 0, 3.07, 0, 0, 0)
+
+[node name="Booster" parent="." instance=ExtResource("4_ps1la")]
+transform = Transform3D(3.7, 0, 0, 0, 3.7, 0, 0, 0, 3.7, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0345, 17.7657, 20.1729)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ps1la")
+
+[node name="Camera3D" type="Camera3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18)
+fov = 81.5625
+
+[node name="CanvasLayer" type="CanvasLayer" parent="WorldEnvironment"]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="WorldEnvironment/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_6aewd")
+
+[connection signal="state_changed" from="CanvasLayer/HUD" to="." method="_on_hud_state_changed"]
