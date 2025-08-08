@@ -8,7 +8,6 @@ margin = 0.0
 size = Vector3(4.04205, 6.78195, 1)
 
 [node name="BoosterPack" type="StaticBody3D"]
-rotation_edit_mode = 1
 input_capture_on_drag = true
 script = ExtResource("1_mkjir")
 

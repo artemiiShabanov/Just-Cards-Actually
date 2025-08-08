@@ -18,7 +18,6 @@ func load_from_cache():
 	else:
 		push_warning("Couldn't load highscore file: ", error_string(FileAccess.get_open_error()))
 		return -1
-		print("Cache file does not exist.")
 
 func set_value(key: String, value):
 	cache[key] = value

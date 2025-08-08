@@ -13,10 +13,10 @@ var description: String:
 func eq(other: Card) -> bool:
 	return suit == other.suit && rank == other.rank
 	
-static func create(suit: SUIT, rank: RANK) -> Card:
+static func create(_suit: SUIT, _rank: RANK) -> Card:
 	var instance = Card.new()
-	instance.suit = suit
-	instance.rank = rank
+	instance.suit = _suit
+	instance.rank = _rank
 	return instance
 
 enum SUIT {LIGHTNING, WATER, FIRE, EARTH}
@@ -50,8 +50,8 @@ const RANK_TO_STR = {
 	RANK.ERROR: "E"
 }
 
-static func level_for_rank(rank: RANK) -> LEVEL:
-	match rank:
+static func level_for_rank(_rank: RANK) -> LEVEL:
+	match _rank:
 		RANK.ONE, RANK.TWO, RANK.THREE, RANK.FOUR, RANK.FIVE, RANK.SIX, RANK.SEVEN, RANK.EIGHT, RANK.NINE, RANK.TEN:
 			return LEVEL.COMMON
 		RANK.JACK, RANK.QUEEN, RANK.KING, RANK.ACE:
@@ -62,8 +62,8 @@ static func level_for_rank(rank: RANK) -> LEVEL:
 			return LEVEL.LEGENDARY
 	return LEVEL.COMMON
 
-static func ranks_for_level(level: LEVEL) -> Array:
-	match level:
+static func ranks_for_level(_level: LEVEL) -> Array:
+	match _level:
 		LEVEL.COMMON:
 			return [RANK.ONE, RANK.TWO, RANK.THREE, RANK.FOUR, RANK.FIVE, RANK.SIX, RANK.SEVEN, RANK.EIGHT, RANK.NINE, RANK.TEN]
 		LEVEL.RARE:

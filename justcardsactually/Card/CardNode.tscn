@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwe2oqsmc80gf"]
+
+[ext_resource type="Script" uid="uid://b8x5iwr34ep2c" path="res://Card/card_node.gd" id="1_c75op"]
+[ext_resource type="Material" uid="uid://c5yipeggkhyja" path="res://Card/materials/LJ.tres" id="2_c75op"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ehl7l"]
+material = ExtResource("2_c75op")
+size = Vector2(4, 6.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c75op"]
+size = Vector3(4, 6.8, 1)
+
+[node name="Card" type="StaticBody3D"]
+script = ExtResource("1_c75op")
+rank = 15
+
+[node name="CardMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ehl7l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_c75op")

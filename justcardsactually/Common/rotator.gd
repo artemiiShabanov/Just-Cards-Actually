@@ -53,7 +53,7 @@ func _process(delta):
 			rotation_velocity = rotation_velocity.lerp(Vector3.ZERO, damping * delta)
 	else:
 		# Smoothly interpolate back to the initial rotation
-		node.transform.basis = node.transform.basis.slerp(initial_rotation, return_speed * delta)
+		node.transform.basis = node.transform.basis.orthonormalized().slerp(initial_rotation, return_speed * delta)
 
 func is_mouse_over_object() -> bool:
 	var mouse_position = get_viewport().get_mouse_position()

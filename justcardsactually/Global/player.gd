@@ -116,11 +116,11 @@ func accept_booster(cards: Array, spent_dust: int, is_free: bool):
 	
 	for c in cards:
 		var card = c as Card
-		var dust = should_dust_card(card)
-		if dust == -1:
+		var _dust = should_dust_card(card)
+		if _dust == -1:
 			filtered_cards.append(card)
 		else:
-			dust_diff += dust
+			dust_diff += _dust
 	
 	_mutate(is_free, filtered_cards, dust_diff)
 
@@ -173,7 +173,7 @@ func add_dust(count: int):
 
 func allow_bootser(allow: bool):
 	booster_available = allow
-	Storage.set_value(LAST_BOOSTER_DATE_KEY, null if allow else Time.get_date_dict_from_system())
+	Storage.set_value(LAST_BOOSTER_DATE_KEY, {} if allow else Time.get_date_dict_from_system())
 	Storage.save_to_cache()
 	
 	booster_update.emit()
