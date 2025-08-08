@@ -1,12 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cy187l1134jxc"]
+[gd_scene load_steps=7 format=3 uid="uid://cy187l1134jxc"]
 
 [ext_resource type="Script" uid="uid://dmcetadb85jth" path="res://Main/main.gd" id="1_lxy7q"]
 [ext_resource type="PackedScene" uid="uid://c7w0s2hx2atic" path="res://Main/HUD/HUD.tscn" id="2_83ytx"]
 [ext_resource type="PackedScene" uid="uid://ddymgjpfxg3o6" path="res://Collection/Collection.tscn" id="3_amygn"]
 [ext_resource type="PackedScene" uid="uid://drun6cha176c2" path="res://Booster/Booster.tscn" id="4_ps1la"]
 [ext_resource type="Texture2D" uid="uid://ubh4325m3mop" path="res://resources/Assets/Bliss_(Windows_XP).png" id="5_6aewd"]
-[ext_resource type="PackedScene" uid="uid://cwe2oqsmc80gf" path="res://Card/CardNode.tscn" id="6_u2i7p"]
-[ext_resource type="PackedScene" uid="uid://br3j7dgfpkvuy" path="res://Common/Rotator.tscn" id="7_hh5pf"]
 
 [sub_resource type="Environment" id="Environment_ps1la"]
 background_mode = 3
@@ -20,13 +18,12 @@ script = ExtResource("1_lxy7q")
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("2_83ytx")]
 
 [node name="Collection" parent="." instance=ExtResource("3_amygn")]
-transform = Transform3D(3.07, 0, 0, 0, 3.07, 0, 0, 0, 3.07, 0, 0, 0)
 
 [node name="Booster" parent="." instance=ExtResource("4_ps1la")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60317, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8053, 45.6197, 61.5699)
+light_energy = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ps1la")
@@ -45,11 +42,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_6aewd")
-
-[node name="Card" parent="." instance=ExtResource("6_u2i7p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30263, 0, 0)
-
-[node name="Rotator" parent="Card" node_paths=PackedStringArray("node") instance=ExtResource("7_hh5pf")]
-node = NodePath("..")
 
 [connection signal="state_changed" from="CanvasLayer/HUD" to="." method="_on_hud_state_changed"]

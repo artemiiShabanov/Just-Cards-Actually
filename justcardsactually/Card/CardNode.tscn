@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwe2oqsmc80gf"]
+[gd_scene load_steps=6 format=3 uid="uid://cwe2oqsmc80gf"]
 
 [ext_resource type="Script" uid="uid://b8x5iwr34ep2c" path="res://Card/card_node.gd" id="1_c75op"]
 [ext_resource type="Material" uid="uid://c5yipeggkhyja" path="res://Card/materials/LJ.tres" id="2_c75op"]
+[ext_resource type="PackedScene" uid="uid://br3j7dgfpkvuy" path="res://Common/Rotator.tscn" id="3_apgh5"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ehl7l"]
 material = ExtResource("2_c75op")
@@ -20,3 +21,8 @@ mesh = SubResource("PlaneMesh_ehl7l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_c75op")
+
+[node name="Rotator" parent="." node_paths=PackedStringArray("node") instance=ExtResource("3_apgh5")]
+node = NodePath("..")
+
+[connection signal="tap_detected" from="Rotator" to="." method="_on_rotator_tap_detected"]

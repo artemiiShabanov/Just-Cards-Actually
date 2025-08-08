@@ -7,9 +7,9 @@
 [node name="Booster" type="Node3D"]
 script = ExtResource("1_mett5")
 
-[node name="Rotator" parent="." node_paths=PackedStringArray("node") instance=ExtResource("3_va2x4")]
-node = NodePath("../BoosterPack")
-
 [node name="BoosterPack" parent="." instance=ExtResource("2_5rbjk")]
 
-[connection signal="tap_detected" from="Rotator" to="." method="_on_rotator_tap_detected"]
+[node name="Rotator" parent="BoosterPack" node_paths=PackedStringArray("node") instance=ExtResource("3_va2x4")]
+node = NodePath("..")
+
+[connection signal="tap_detected" from="BoosterPack/Rotator" to="." method="_on_rotator_tap_detected"]

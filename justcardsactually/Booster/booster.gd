@@ -1,12 +1,21 @@
 extends Node3D
 
-@onready var booster = $BoosterPack
+class_name Booster
+
+@onready var booster: BoosterPack = $BoosterPack
 @onready var rotator = $Rotator
 
 func _ready() -> void:
 	Player.dust_update.connect(_on_dust_updated)
 	Player.booster_update.connect(_on_booster_updated)
 	_update_booster()
+
+
+func _hide():
+	remove_child(booster)
+	
+func _show():
+	add_child(booster)
 
 func _on_booster_updated():
 	_update_booster()

@@ -49,32 +49,6 @@ func _ready() -> void:
 # logic
 
 
-func get_formatted_collection() -> Dictionary:
-	var sort_f = func (card1, card2):
-		return card1.rank < card2.rank
-	
-	var filter_l_f = func (card):
-		return card.suit == Card.SUIT.LIGHTNING
-	var filter_w_f = func (card):
-		return card.suit == Card.SUIT.WATER
-	var filter_f_f = func (card):
-		return card.suit == Card.SUIT.FIRE
-	var filter_e_f = func (card):
-		return card.suit == Card.SUIT.EARTH
-	
-	var dict = {
-		Card.SUIT.LIGHTNING: collection.filter(filter_l_f),
-		Card.SUIT.WATER: collection.filter(filter_w_f),
-		Card.SUIT.FIRE: collection.filter(filter_f_f),
-		Card.SUIT.EARTH: collection.filter(filter_e_f)
-	}
-	
-	for c in dict:
-		c.sort_custom(sort_f)
-	
-	return dict
-
-
 func generate_booster() -> Array:
 	var booster = []
 	for i in range(0, RARITY_COUNT):
@@ -140,15 +114,19 @@ func _mutate(is_free: bool, cards: Array, dust_diff: int):
 		var eq_f = func (card2):
 			return card.eq(card2)
 		return collection.find_custom(eq_f) == -1
+	
 	cards = cards.filter(filter_f)
-	collection.append_array(cards)
-	Storage.set_value(COLLECTION_KEY, collection)
 	if !cards.is_empty():
+		var sort_f = func (card1, card2):
+			return card1.suit < card2.suit && card1.rank < card2.rank
+		collection.append_array(cards)
+		collection.sort_custom(sort_f)
+		Storage.set_value(COLLECTION_KEY, collection)
 		collection_update.emit()
 
-	dust += dust_diff
-	Storage.set_value(DUST_KEY, dust)
 	if dust_diff != 0:
+		dust += dust_diff
+		Storage.set_value(DUST_KEY, dust)
 		dust_update.emit()
 	
 	if is_free:
