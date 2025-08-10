@@ -4,6 +4,7 @@ class_name Collection
 
 const card_scene = preload("res://Card/CardNode.tscn")
 const PAGE_SIZE = 9
+const MOVE_DURATION = 0.1
 
 var collection: Array
 var current_page: int = 0
@@ -12,6 +13,9 @@ var pages_count: int
 
 @onready var left_button: Button = $CanvasLayer/LeftButton
 @onready var right_button: Button = $CanvasLayer/RightButton
+
+@onready var marker_front: Marker3D = $FrontMarker
+@onready var markers: Array =[$Marker1, $Marker2, $Marker3, $Marker4, $Marker5, $Marker6, $Marker7, $Marker8, $Marker9]
 
 var cards: Array
 
@@ -59,14 +63,14 @@ func _update_cards():
 	_clear_cards()
 	for i in range(0, min(PAGE_SIZE, collection.size() - PAGE_SIZE * current_page)):
 		var index = PAGE_SIZE * current_page + i
-		var card_data = collection[index]
-		print(typeof(card_data))
+		var card_data = collection[index] as Card
 		var card_node = card_scene.instantiate()
-		card_node.rank = Card.RANK.ONE
-		card_node.suit = Card.SUIT.WATER
+		card_node.rank = card_data.rank
+		card_node.suit = card_data.suit
 		card_node.tapped.connect(_handle_tap)
 		cards.append(card_node)
 		add_child(card_node)
+		card_node.global_position = (markers[i] as Marker3D).global_position
 
 
 func _handle_tap(node):
@@ -81,9 +85,16 @@ func _handle_tap(node):
 
 func _move_to_front(index: int):
 	_disable_buttons()
+	var card_node = cards[index] as Node3D
+	var tween := create_tween()
+	tween.tween_property(card_node, "global_position", marker_front.global_position, MOVE_DURATION).set_ease(Tween.EASE_IN_OUT)
 	
 
 func _move_to_back():
+	var card_node = cards[selected_index] as Node3D
+	var marker = markers[selected_index] as Node3D
+	var tween := create_tween()
+	tween.tween_property(card_node, "global_position", marker.global_position, MOVE_DURATION).set_ease(Tween.EASE_IN_OUT)
 	_update_buttons()
 
 

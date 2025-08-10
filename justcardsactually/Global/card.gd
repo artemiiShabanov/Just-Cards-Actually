@@ -9,6 +9,15 @@ var level: LEVEL:
 var description: String:
 	get:
 		return "%s%s" % [SUIT_TO_STR[suit], RANK_TO_STR[rank]]
+		
+func to_dict() -> Dictionary:
+	return {
+		"suit": suit,
+		"rank": rank
+	}
+
+static func from_dict(data: Dictionary) -> Card:
+	return Card.create(data["suit"], data["rank"])
 
 func eq(other: Card) -> bool:
 	return suit == other.suit && rank == other.rank

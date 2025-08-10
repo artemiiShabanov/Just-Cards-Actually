@@ -1,6 +1,5 @@
 extends Node
 
-const COLLECTION_KEY = "user_collection"
 const DUST_KEY = "user_dust"
 const LAST_BOOSTER_DATE_KEY = "last_booster_date"
 
@@ -40,7 +39,7 @@ var dust_booster_available: bool:
 
 func _ready() -> void:
 	Storage.load_from_cache()
-	collection = Storage.get_value(COLLECTION_KEY, [])
+	collection = Storage.get_collection()
 	dust = Storage.get_value(DUST_KEY, 0)
 	var last_bootser_date = Storage.get_value(LAST_BOOSTER_DATE_KEY)
 	booster_available = last_bootser_date == null || _compare_dates(last_bootser_date, Time.get_date_dict_from_system())
@@ -71,7 +70,7 @@ func generate_booster() -> Array:
 	
 	for i in range(0, BOOSTER_SIZE - booster.size()):
 		booster.append(_generate_card(Card.LEVEL.COMMON))
-	
+	booster.reverse()
 	return booster
 
 
@@ -118,10 +117,10 @@ func _mutate(is_free: bool, cards: Array, dust_diff: int):
 	cards = cards.filter(filter_f)
 	if !cards.is_empty():
 		var sort_f = func (card1, card2):
-			return card1.suit < card2.suit && card1.rank < card2.rank
+			return card1.suit < card2.suit || card1.suit == card2.suit && card1.rank < card2.rank
 		collection.append_array(cards)
 		collection.sort_custom(sort_f)
-		Storage.set_value(COLLECTION_KEY, collection)
+		Storage.set_collection(collection)
 		collection_update.emit()
 
 	if dust_diff != 0:
