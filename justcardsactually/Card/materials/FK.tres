@@ -1,12 +1,12 @@
 [gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://b6uto4rmdhpcm"]
 
 [ext_resource type="Shader" uid="uid://b7d1hgyvmns0g" path="res://Card/shaders/cardLit.gdshader" id="1_hy2yn"]
-[ext_resource type="Texture2D" uid="uid://cpasrnis7q2ig" path="res://Card/textures/common/back.png" id="2_m6qlh"]
-[ext_resource type="Texture2D" uid="uid://crq6uxewtnj8i" path="res://Card/textures/cards/card.png" id="3_jwkxu"]
-[ext_resource type="Texture2D" uid="uid://cxtjnlgwt4np7" path="res://Card/textures/common/mask.png" id="4_qk3gj"]
-[ext_resource type="Texture2D" uid="uid://cni4ewxk3w4rl" path="res://Card/textures/common/shine.png" id="5_6vy3c"]
+[ext_resource type="Texture2D" uid="uid://dvu6flelip2wd" path="res://Card/textures/common/back.png" id="2_m6qlh"]
+[ext_resource type="Texture2D" uid="uid://cdlkj20tdc4td" path="res://Card/textures/cards/FK.png" id="3_hy2yn"]
+[ext_resource type="Texture2D" uid="uid://b0xhaptmg0cpr" path="res://Card/textures/common/mask2.png" id="4_m6qlh"]
+[ext_resource type="Texture2D" uid="uid://qejc01f548fg" path="res://Card/textures/common/shine.png" id="5_6vy3c"]
 [ext_resource type="Texture2D" uid="uid://bb6xthb5waufd" path="res://Card/textures/cards/head.png" id="6_alc0r"]
-[ext_resource type="Texture2D" uid="uid://djy6wlgurn86h" path="res://Card/textures/suit/bg.png" id="7_sjdgk"]
+[ext_resource type="Texture2D" uid="uid://dkxb5duv5hxgx" path="res://Card/textures/suit/FBG.png" id="7_hy2yn"]
 
 [resource]
 render_priority = 0
@@ -17,15 +17,15 @@ shader_parameter/specularInside = 0.3
 shader_parameter/specularOutside = 0.5
 shader_parameter/metallicInside = 0.62
 shader_parameter/metallicOutside = 0.674
-shader_parameter/mainTexture = ExtResource("3_jwkxu")
+shader_parameter/mainTexture = ExtResource("3_hy2yn")
 shader_parameter/backTexture = ExtResource("2_m6qlh")
 shader_parameter/uvFlip = Vector2(-1, -1)
 shader_parameter/aspectRatio = Vector2(0.5, 0.875)
 shader_parameter/alphaThreshold = 0.5
-shader_parameter/maskTexture = ExtResource("4_qk3gj")
+shader_parameter/maskTexture = ExtResource("4_m6qlh")
 shader_parameter/depth1 = 0.0
 shader_parameter/texture1 = ExtResource("5_6vy3c")
 shader_parameter/depth2 = 0.0
 shader_parameter/texture2 = ExtResource("6_alc0r")
 shader_parameter/depth3 = 0.0
-shader_parameter/texture3 = ExtResource("7_sjdgk")
+shader_parameter/texture3 = ExtResource("7_hy2yn")

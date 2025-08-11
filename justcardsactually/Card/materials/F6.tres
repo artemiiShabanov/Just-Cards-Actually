@@ -1,11 +1,11 @@
 [gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://dfku060khv3md"]
 
 [ext_resource type="Shader" uid="uid://b7d1hgyvmns0g" path="res://Card/shaders/cardLit.gdshader" id="1_802vl"]
-[ext_resource type="Texture2D" uid="uid://cpasrnis7q2ig" path="res://Card/textures/common/back.png" id="2_4wfjx"]
-[ext_resource type="Texture2D" uid="uid://crq6uxewtnj8i" path="res://Card/textures/cards/card.png" id="3_td5ag"]
-[ext_resource type="Texture2D" uid="uid://cxtjnlgwt4np7" path="res://Card/textures/common/mask.png" id="4_tdtt6"]
+[ext_resource type="Texture2D" uid="uid://dvu6flelip2wd" path="res://Card/textures/common/back.png" id="2_4wfjx"]
+[ext_resource type="Texture2D" uid="uid://4q8r5q8o47b8" path="res://Card/textures/cards/F6.png" id="3_802vl"]
+[ext_resource type="Texture2D" uid="uid://b0xhaptmg0cpr" path="res://Card/textures/common/mask2.png" id="4_4wfjx"]
 [ext_resource type="Texture2D" uid="uid://bb6xthb5waufd" path="res://Card/textures/cards/head.png" id="5_mywx1"]
-[ext_resource type="Texture2D" uid="uid://djy6wlgurn86h" path="res://Card/textures/suit/bg.png" id="6_us1al"]
+[ext_resource type="Texture2D" uid="uid://dkxb5duv5hxgx" path="res://Card/textures/suit/FBG.png" id="6_802vl"]
 
 [resource]
 render_priority = 0
@@ -16,14 +16,14 @@ shader_parameter/specularInside = 0.3
 shader_parameter/specularOutside = 0.5
 shader_parameter/metallicInside = 0.0
 shader_parameter/metallicOutside = 0.0
-shader_parameter/mainTexture = ExtResource("3_td5ag")
+shader_parameter/mainTexture = ExtResource("3_802vl")
 shader_parameter/backTexture = ExtResource("2_4wfjx")
 shader_parameter/uvFlip = Vector2(-1, -1)
 shader_parameter/aspectRatio = Vector2(0.5, 0.875)
 shader_parameter/alphaThreshold = 0.5
-shader_parameter/maskTexture = ExtResource("4_tdtt6")
+shader_parameter/maskTexture = ExtResource("4_4wfjx")
 shader_parameter/depth1 = 0.0
 shader_parameter/depth2 = 0.0
 shader_parameter/texture2 = ExtResource("5_mywx1")
 shader_parameter/depth3 = 0.0
-shader_parameter/texture3 = ExtResource("6_us1al")
+shader_parameter/texture3 = ExtResource("6_802vl")

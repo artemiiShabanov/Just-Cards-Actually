@@ -5,13 +5,14 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mkjir"]
 margin = 0.0
-size = Vector3(4.04205, 6.78195, 1)
+size = Vector3(4, 6, 0.5)
 
 [node name="BoosterPack" type="StaticBody3D"]
 input_capture_on_drag = true
 script = ExtResource("1_s2621")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.102718, 0)
 shape = SubResource("BoxShape3D_mkjir")
 debug_color = Color(0.870588, 0, 0.847059, 1)
 

@@ -1,11 +1,11 @@
 [gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://dmdnsmdpp4616"]
 
 [ext_resource type="Shader" uid="uid://b7d1hgyvmns0g" path="res://Card/shaders/cardLit.gdshader" id="1_8irit"]
-[ext_resource type="Texture2D" uid="uid://cpasrnis7q2ig" path="res://Card/textures/common/back.png" id="2_5776d"]
-[ext_resource type="Texture2D" uid="uid://crq6uxewtnj8i" path="res://Card/textures/cards/card.png" id="3_qpg0s"]
-[ext_resource type="Texture2D" uid="uid://cxtjnlgwt4np7" path="res://Card/textures/common/mask.png" id="4_6p2mo"]
+[ext_resource type="Texture2D" uid="uid://dvu6flelip2wd" path="res://Card/textures/common/back.png" id="2_5776d"]
+[ext_resource type="Texture2D" uid="uid://devci25koetjb" path="res://Card/textures/cards/W2.png" id="3_8irit"]
+[ext_resource type="Texture2D" uid="uid://b0xhaptmg0cpr" path="res://Card/textures/common/mask2.png" id="4_5776d"]
 [ext_resource type="Texture2D" uid="uid://bb6xthb5waufd" path="res://Card/textures/cards/head.png" id="5_6bdgm"]
-[ext_resource type="Texture2D" uid="uid://djy6wlgurn86h" path="res://Card/textures/suit/bg.png" id="6_3aykb"]
+[ext_resource type="Texture2D" uid="uid://dopou6inokibo" path="res://Card/textures/suit/WBG.png" id="6_8irit"]
 
 [resource]
 render_priority = 0
@@ -16,14 +16,14 @@ shader_parameter/specularInside = 0.3
 shader_parameter/specularOutside = 0.5
 shader_parameter/metallicInside = 0.0
 shader_parameter/metallicOutside = 0.0
-shader_parameter/mainTexture = ExtResource("3_qpg0s")
+shader_parameter/mainTexture = ExtResource("3_8irit")
 shader_parameter/backTexture = ExtResource("2_5776d")
 shader_parameter/uvFlip = Vector2(-1, -1)
 shader_parameter/aspectRatio = Vector2(0.5, 0.875)
 shader_parameter/alphaThreshold = 0.5
-shader_parameter/maskTexture = ExtResource("4_6p2mo")
+shader_parameter/maskTexture = ExtResource("4_5776d")
 shader_parameter/depth1 = 0.0
 shader_parameter/depth2 = 0.0
 shader_parameter/texture2 = ExtResource("5_6bdgm")
 shader_parameter/depth3 = 0.0
-shader_parameter/texture3 = ExtResource("6_3aykb")
+shader_parameter/texture3 = ExtResource("6_8irit")

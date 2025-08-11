@@ -6,10 +6,10 @@
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ehl7l"]
 material = ExtResource("2_c75op")
-size = Vector2(4, 6.8)
+size = Vector2(4, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c75op"]
-size = Vector3(4, 6.8, 1)
+size = Vector3(4, 6, 0.5)
 
 [node name="Card" type="StaticBody3D"]
 script = ExtResource("1_c75op")
