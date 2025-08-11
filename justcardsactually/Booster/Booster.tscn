@@ -13,4 +13,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 [node name="Rotator" parent="BoosterPack" node_paths=PackedStringArray("node") instance=ExtResource("3_va2x4")]
 node = NodePath("..")
 
+[node name="MarkerEnd" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -56.4798, 10.0268)
+
+[node name="MarkerStart" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.0192)
+
 [connection signal="tap_detected" from="BoosterPack/Rotator" to="." method="_on_rotator_tap_detected"]

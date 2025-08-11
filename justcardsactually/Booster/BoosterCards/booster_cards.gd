@@ -10,6 +10,7 @@ const card_scene = preload("res://Card/CardNode.tscn")
 
 @onready var marker_front: Marker3D = $FrontMarker
 @onready var marker_start: Marker3D = $StartMarker0
+@onready var marker_finish: Marker3D = $FinishMarker
 @onready var markers_start: Array =[$StartMarker1, $StartMarker2, $StartMarker3, $StartMarker4, $StartMarker5]
 @onready var markers: Array =[$Marker1, $Marker2, $Marker3, $Marker4, $Marker5]
 @onready var done_button: Button = $CanvasLayer/DoneButton
@@ -87,7 +88,7 @@ func _collect():
 	for i in range(0, card_nodes.size()):
 		var card_node = card_nodes[i] as Node3D
 		var tween := create_tween()
-		tween.tween_property(card_node, "global_position", markers_start[i].global_position, MOVE_DURATION).set_ease(Tween.EASE_IN_OUT)
+		tween.tween_property(card_node, "global_position", marker_finish.global_position, MOVE_DURATION).set_ease(Tween.EASE_IN_OUT)
 		await tween.finished
 
 

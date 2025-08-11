@@ -150,7 +150,7 @@ func add_dust(count: int):
 
 func allow_bootser(allow: bool):
 	booster_available = allow
-	Storage.set_value(LAST_BOOSTER_DATE_KEY, {} if allow else Time.get_date_dict_from_system())
+	Storage.set_value(LAST_BOOSTER_DATE_KEY, Time.get_date_dict_from_unix_time(0) if allow else Time.get_date_dict_from_system())
 	Storage.save_to_cache()
 	
 	booster_update.emit()

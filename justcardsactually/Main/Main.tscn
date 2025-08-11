@@ -1,14 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy187l1134jxc"]
+[gd_scene load_steps=9 format=3 uid="uid://cy187l1134jxc"]
 
 [ext_resource type="Script" uid="uid://dmcetadb85jth" path="res://Main/main.gd" id="1_lxy7q"]
 [ext_resource type="PackedScene" uid="uid://c7w0s2hx2atic" path="res://Main/HUD/HUD.tscn" id="2_83ytx"]
 [ext_resource type="PackedScene" uid="uid://ddymgjpfxg3o6" path="res://Collection/Collection.tscn" id="3_amygn"]
 [ext_resource type="PackedScene" uid="uid://drun6cha176c2" path="res://Booster/Booster.tscn" id="4_ps1la"]
-[ext_resource type="Texture2D" uid="uid://ubh4325m3mop" path="res://resources/Assets/Bliss_(Windows_XP).png" id="5_6aewd"]
+[ext_resource type="Shader" uid="uid://bh6dkcfgaxhm" path="res://Main/MainBG.gdshader" id="5_u2i7p"]
+[ext_resource type="Texture2D" uid="uid://dpdbpqp3tvauw" path="res://resources/Assets/bg.png" id="6_u2i7p"]
 
 [sub_resource type="Environment" id="Environment_ps1la"]
 background_mode = 3
 sky_custom_fov = 46.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hh5pf"]
+shader = ExtResource("5_u2i7p")
+shader_parameter/speed = 0.05
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_lxy7q")
@@ -35,12 +40,11 @@ fov = 81.5625
 [node name="CanvasLayer" type="CanvasLayer" parent="WorldEnvironment"]
 layer = -1
 
-[node name="TextureRect" type="TextureRect" parent="WorldEnvironment/CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_6aewd")
+[node name="Sprite2D" type="Sprite2D" parent="WorldEnvironment/CanvasLayer"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_hh5pf")
+position = Vector2(576, 577.5)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_u2i7p")
 
 [connection signal="state_changed" from="CanvasLayer/HUD" to="." method="_on_hud_state_changed"]

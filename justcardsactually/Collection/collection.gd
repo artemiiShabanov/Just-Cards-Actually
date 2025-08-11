@@ -99,7 +99,8 @@ func _move_to_back():
 
 
 func _on_collection_updated():
-	get_tree().reload_current_scene()
+	pass
+	#get_tree().reload_current_scene()
 
 
 func _on_left_button_pressed() -> void:

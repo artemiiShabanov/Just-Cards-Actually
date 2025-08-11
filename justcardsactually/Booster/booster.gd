@@ -3,10 +3,12 @@ extends Node3D
 class_name Booster
 
 const booster_cards_scene = preload("res://Booster/BoosterCards/BoosterCards.tscn")
+const MOVE_DURATION = 0.5
 
 var opening = false
 @onready var booster: BoosterPack = $BoosterPack
-@onready var rotator = $Rotator
+@onready var marker_start: Marker3D = $MarkerStart
+@onready var marker_end: Marker3D = $MarkerEnd
 
 
 func _ready() -> void:
@@ -24,11 +26,13 @@ func _show():
 	add_child(booster)
 
 
-func _update():
-	if opening:
-		remove_child(booster)
-	else:
-		add_child(booster)
+func _end_booster():
+	var tween := create_tween()
+	tween.tween_property(booster, "global_position", marker_end.global_position, MOVE_DURATION).set_ease(Tween.EASE_IN_OUT)
+
+func _start_booster():
+	var tween := create_tween()
+	tween.tween_property(booster, "global_position", marker_start.global_position, MOVE_DURATION).set_ease(Tween.EASE_IN_OUT)
 
 
 func _on_booster_updated():
@@ -52,14 +56,14 @@ func _update_booster():
 
 
 func _on_rotator_tap_detected() -> void:
-	if booster.type != BoosterPack.TYPE.DISABLED:
+	if booster.type != BoosterPack.TYPE.DISABLED and !opening:
 		_open_booster()
 
 
 func _open_booster():
 	var cards = Player.generate_booster()
 	opening = true
-	_update()
+	await _end_booster()
 	
 	var booster_cards = booster_cards_scene.instantiate()
 	booster_cards.cards = cards
@@ -73,4 +77,4 @@ func _open_booster():
 func _on_booster_cards_done(node: Node3D) -> void:
 	remove_child(node)
 	opening = false
-	_update()
+	_start_booster()

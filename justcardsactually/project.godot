@@ -20,6 +20,16 @@ config/icon="res://icon.svg"
 Player="*res://Global/player.gd"
 Storage="*res://Global/storage.gd"
 
+[file_customization]
+
+folder_colors={
+"res://Card/materials/": "yellow",
+"res://Card/shaders/": "red",
+"res://Card/textures/": "blue",
+"res://resources/Assets/": "blue",
+"res://resources/Sound/": "purple"
+}
+
 [filesystem]
 
 import/blender/enabled=false
