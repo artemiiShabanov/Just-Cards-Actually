@@ -14,7 +14,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 node = NodePath("..")
 
 [node name="MarkerEnd" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -56.4798, 10.0268)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.8393, 10.0268)
 
 [node name="MarkerStart" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.0192)

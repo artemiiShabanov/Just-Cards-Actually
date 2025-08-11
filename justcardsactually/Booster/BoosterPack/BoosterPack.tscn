@@ -1,11 +1,77 @@
-[gd_scene load_steps=4 format=3 uid="uid://tingqai41etc"]
+[gd_scene load_steps=15 format=3 uid="uid://tingqai41etc"]
 
 [ext_resource type="Script" uid="uid://djofvpjo0uf3p" path="res://Booster/BoosterPack/booster_pack.gd" id="1_s2621"]
 [ext_resource type="PackedScene" uid="uid://b566p5r4nso5w" path="res://resources/Assets/booster_pack_tcg_pack.glb" id="2_r7bcm"]
+[ext_resource type="Texture2D" uid="uid://ckjuvpr75s0mi" path="res://resources/Assets/PackFree1.png" id="3_usvks"]
+[ext_resource type="Texture2D" uid="uid://bdwiniv5d3c17" path="res://resources/Assets/PackFree2.png" id="4_depsd"]
+[ext_resource type="Texture2D" uid="uid://c307o8l5hbv" path="res://resources/Assets/PackFree3.png" id="5_dh4qo"]
+[ext_resource type="Texture2D" uid="uid://b13l6jkwa71oa" path="res://resources/Assets/PackFree4.png" id="6_qf3sp"]
+[ext_resource type="Texture2D" uid="uid://cbavb35ahotdw" path="res://resources/Assets/PackDisabled.png" id="7_dh4qo"]
+[ext_resource type="Texture2D" uid="uid://r0ynx3o5nh7w" path="res://resources/Assets/PackPay1.png" id="8_qu6p4"]
+[ext_resource type="Texture2D" uid="uid://deqp6nxyeyfit" path="res://resources/Assets/PackPay2.png" id="9_waaru"]
+[ext_resource type="Texture2D" uid="uid://w7c1baf2p6ls" path="res://resources/Assets/PackPay3.png" id="10_u53y2"]
+[ext_resource type="Texture2D" uid="uid://rb2pi7btabq1" path="res://resources/Assets/PackPay4.png" id="11_ahwt7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mkjir"]
 margin = 0.0
 size = Vector3(4, 6, 0.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7eci3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_usvks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_depsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dh4qo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qf3sp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_dh4qo")
+}],
+"loop": true,
+"name": &"disabled",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_qu6p4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_waaru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u53y2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ahwt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u53y2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_waaru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qu6p4")
+}],
+"loop": true,
+"name": &"pay",
+"speed": 10.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_usvks"]
+viewport_path = NodePath("SubViewport")
 
 [node name="BoosterPack" type="StaticBody3D"]
 input_capture_on_drag = true
@@ -17,3 +83,18 @@ shape = SubResource("BoxShape3D_mkjir")
 debug_color = Color(0.870588, 0, 0.847059, 1)
 
 [node name="Pack" parent="." instance=ExtResource("2_r7bcm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(350, 525)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewport"]
+position = Vector2(175, 262.5)
+sprite_frames = SubResource("SpriteFrames_7eci3")
+animation = &"pay"
+autoplay = "pay"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.48591)
+texture = SubResource("ViewportTexture_usvks")

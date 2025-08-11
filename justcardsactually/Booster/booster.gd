@@ -18,17 +18,23 @@ func _ready() -> void:
 
 
 func _hide():
+	opening = false
 	for n in get_children():
-		remove_child(n)
+		if n != marker_start and n != marker_end:
+			remove_child(n)
 
 
 func _show():
+	opening = false
 	add_child(booster)
+	booster.global_position = marker_start.global_position
 
 
 func _end_booster():
 	var tween := create_tween()
 	tween.tween_property(booster, "global_position", marker_end.global_position, MOVE_DURATION).set_ease(Tween.EASE_IN_OUT)
+	await tween
+
 
 func _start_booster():
 	var tween := create_tween()
@@ -45,13 +51,10 @@ func _on_dust_updated():
 
 func _update_booster():
 	if Player.booster_available:
-		booster.visible = true
 		booster.type = BoosterPack.TYPE.FREE
 	elif Player.dust_booster_available:
-		booster.visible = true
 		booster.type = BoosterPack.TYPE.PAID
 	else:
-		booster.visible = false
 		booster.type = BoosterPack.TYPE.DISABLED
 
 
