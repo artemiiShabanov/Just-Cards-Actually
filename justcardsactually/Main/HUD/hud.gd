@@ -25,6 +25,7 @@ func _on_collection_updated():
 	collection_text.text = "%d/%d" % [Player.collection.size(), Player.COLLECTION_FULL_SIZE]
 
 func _on_state_button_toggled(toggled_on: bool) -> void:
+	SoundPlayer.play_sound(SoundPlayer.SOUND.BAP)
 	state = STATE.COLLECTION if toggled_on else STATE.BOOSTER
 	state_changed.emit(state)
 

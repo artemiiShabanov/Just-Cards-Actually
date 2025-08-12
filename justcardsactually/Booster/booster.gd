@@ -33,7 +33,7 @@ func _show():
 func _end_booster():
 	var tween := create_tween()
 	tween.tween_property(booster, "global_position", marker_end.global_position, MOVE_DURATION).set_ease(Tween.EASE_IN_OUT)
-	await tween
+	await tween.finished
 
 
 func _start_booster():
@@ -66,12 +66,14 @@ func _on_rotator_tap_detected() -> void:
 func _open_booster():
 	var cards = Player.generate_booster()
 	opening = true
+	SoundPlayer.play_sound(SoundPlayer.SOUND.BOOSTER_OPEN)
 	await _end_booster()
 	
 	var booster_cards = booster_cards_scene.instantiate()
 	booster_cards.cards = cards
 	booster_cards.done.connect(_on_booster_cards_done)
 	add_child(booster_cards)
+	SoundPlayer.play_sound(SoundPlayer.SOUND.SHUFFLE)
 	
 	var is_free = booster.type == BoosterPack.TYPE.FREE
 	Player.accept_booster(cards, 0 if is_free else Player.BOOSTER_COST, is_free)

@@ -104,12 +104,14 @@ func _on_collection_updated():
 
 
 func _on_left_button_pressed() -> void:
+	SoundPlayer.play_sound(SoundPlayer.SOUND.BAP)
 	current_page -= 1
 	_update_cards()
 	_update_buttons()
 
 
 func _on_right_button_pressed() -> void:
+	SoundPlayer.play_sound(SoundPlayer.SOUND.BAP)
 	current_page += 1
 	_update_cards()
 	_update_buttons()

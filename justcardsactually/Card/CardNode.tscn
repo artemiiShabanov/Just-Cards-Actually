@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwe2oqsmc80gf"]
+[gd_scene load_steps=8 format=3 uid="uid://cwe2oqsmc80gf"]
 
 [ext_resource type="Script" uid="uid://b8x5iwr34ep2c" path="res://Card/card_node.gd" id="1_c75op"]
 [ext_resource type="Material" uid="uid://c5yipeggkhyja" path="res://Card/materials/LJ.tres" id="2_c75op"]
 [ext_resource type="PackedScene" uid="uid://br3j7dgfpkvuy" path="res://Common/Rotator.tscn" id="3_apgh5"]
+[ext_resource type="Texture2D" uid="uid://ddg5rk0q68cgs" path="res://resources/Assets/CardDust.png" id="4_ehl7l"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ehl7l"]
 material = ExtResource("2_c75op")
@@ -10,6 +11,9 @@ size = Vector2(4, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c75op"]
 size = Vector3(4, 6, 0.5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dod34"]
+viewport_path = NodePath("SubViewport")
 
 [node name="Card" type="StaticBody3D"]
 script = ExtResource("1_c75op")
@@ -24,5 +28,17 @@ shape = SubResource("BoxShape3D_c75op")
 
 [node name="Rotator" parent="." node_paths=PackedStringArray("node") instance=ExtResource("3_apgh5")]
 node = NodePath("..")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(400, 600)
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport"]
+position = Vector2(200, 300)
+texture = ExtResource("4_ehl7l")
+
+[node name="DuplicateSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0699188)
+texture = SubResource("ViewportTexture_dod34")
 
 [connection signal="tap_detected" from="Rotator" to="." method="_on_rotator_tap_detected"]

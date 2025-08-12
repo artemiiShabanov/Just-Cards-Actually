@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cy187l1134jxc"]
+[gd_scene load_steps=10 format=3 uid="uid://cy187l1134jxc"]
 
 [ext_resource type="Script" uid="uid://dmcetadb85jth" path="res://Main/main.gd" id="1_lxy7q"]
 [ext_resource type="PackedScene" uid="uid://c7w0s2hx2atic" path="res://Main/HUD/HUD.tscn" id="2_83ytx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://drun6cha176c2" path="res://Booster/Booster.tscn" id="4_ps1la"]
 [ext_resource type="Shader" uid="uid://bh6dkcfgaxhm" path="res://Main/MainBG.gdshader" id="5_u2i7p"]
 [ext_resource type="Texture2D" uid="uid://dpdbpqp3tvauw" path="res://resources/Assets/bg.png" id="6_u2i7p"]
+[ext_resource type="AudioStream" uid="uid://b5t5bhyywyjcd" path="res://resources/Sound/Roll the Dice.mp3" id="7_hh5pf"]
 
 [sub_resource type="Environment" id="Environment_ps1la"]
 background_mode = 3
@@ -53,5 +54,9 @@ transform = Transform3D(0.781727, 0, 0.62362, 0, 1, 0, -0.62362, 0, 0.781727, 16
 light_energy = 30.0
 light_indirect_energy = 16.0
 spot_range = 108.227
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_hh5pf")
+autoplay = true
 
 [connection signal="state_changed" from="CanvasLayer/HUD" to="." method="_on_hud_state_changed"]

@@ -6,11 +6,13 @@ signal tapped(node: CardNode)
 
 @export var suit: Card.SUIT
 @export var rank: Card.RANK
+@export var dustable: bool
 @onready var mesh = $CardMesh
 
 func _ready() -> void:
 	var card = Card.create(suit, rank)
 	mesh.set_surface_override_material(0, materials[card.description])
+	$DuplicateSprite.visible = dustable
 
 
 func _on_rotator_tap_detected() -> void:

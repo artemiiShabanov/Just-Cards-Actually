@@ -28,7 +28,7 @@ static func create(_suit: SUIT, _rank: RANK) -> Card:
 	instance.rank = _rank
 	return instance
 
-enum SUIT {LIGHTNING, WATER, FIRE, EARTH}
+enum SUIT {LIGHTNING, FIRE, WATER, EARTH}
 enum RANK {ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE, JOKER, RJOKER, ERROR}
 enum LEVEL {COMMON, RARE, EPIC, LEGENDARY}
 

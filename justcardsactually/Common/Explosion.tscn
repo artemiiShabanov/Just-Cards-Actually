@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlxd32sfewpbp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cw2i"]
+albedo_color = Color(0.580392, 0.215686, 1, 1)
+emission_enabled = true
+emission = Color(0.580392, 0.215686, 1, 1)
+emission_energy_multiplier = 4.02
+
+[sub_resource type="BoxMesh" id="BoxMesh_8jcig"]
+material = SubResource("StandardMaterial3D_0cw2i")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="Curve" id="Curve_1fqic"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="GDScript" id="GDScript_5u2mg"]
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Explosion" type="CPUParticles3D"]
+emitting = false
+amount = 1000
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.5
+mesh = SubResource("BoxMesh_8jcig")
+emission_shape = 3
+emission_box_extents = Vector3(4, 6, 1)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+scale_amount_curve = SubResource("Curve_1fqic")
+color = Color(1, 0, 1, 1)
+script = SubResource("GDScript_5u2mg")
