@@ -64,7 +64,8 @@ func _on_rotator_tap_detected() -> void:
 
 
 func _open_booster():
-	var cards = Player.generate_booster()
+	var is_free = booster.type == BoosterPack.TYPE.FREE
+	var cards = Player.generate_booster(is_free)
 	opening = true
 	SoundPlayer.play_sound(SoundPlayer.SOUND.BOOSTER_OPEN)
 	await _end_booster()
@@ -75,7 +76,6 @@ func _open_booster():
 	add_child(booster_cards)
 	SoundPlayer.play_sound(SoundPlayer.SOUND.SHUFFLE)
 	
-	var is_free = booster.type == BoosterPack.TYPE.FREE
 	Player.accept_booster(cards, 0 if is_free else Player.BOOSTER_COST, is_free)
 
 

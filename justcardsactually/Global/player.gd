@@ -9,10 +9,10 @@ const RARITY_COUNT = 1
 const EXTRA_RARITY_COUNT = 1
 const RARE_CHANCE = 1
 const EPIC_CHANCE = 0.2
-const LEGENDARY_CHANCE = 0.1
-const EXTRA_RARE_CHANCE = 0.3
+const LEGENDARY_CHANCE = 0.05
+const EXTRA_RARE_CHANCE = 0.4
 const EXTRA_EPIC_CHANCE = 0.1
-const EXTRA_LEGENDARY_CHANCE = 0.05
+const EXTRA_LEGENDARY_CHANCE = 0.01
 
 const BOOSTER_COST = 50
 const DUST_VALUE = {
@@ -48,7 +48,7 @@ func _ready() -> void:
 # logic
 
 
-func generate_booster() -> Array:
+func generate_booster(is_free: bool) -> Array:
 	var booster = []
 	for i in range(0, RARITY_COUNT):
 		var r = rng.randf()
@@ -67,6 +67,15 @@ func generate_booster() -> Array:
 			booster.append(_generate_card(Card.LEVEL.EPIC))
 		elif r <= EXTRA_RARE_CHANCE:
 			booster.append(_generate_card(Card.LEVEL.RARE))
+	
+	if !is_free and collection.size() < COLLECTION_FULL_SIZE:
+		while true:
+			var suit = Card.SUIT.values().pick_random()
+			var rank = Card.RANK.values().pick_random()
+			var new_card = Card.create(suit, rank)
+			if should_dust_card(new_card) < 0:
+				booster.append(new_card)
+				break
 	
 	for i in range(0, BOOSTER_SIZE - booster.size()):
 		booster.append(_generate_card(Card.LEVEL.COMMON))
@@ -99,7 +108,7 @@ func accept_booster(cards: Array, spent_dust: int, is_free: bool):
 
 
 func _generate_card(level: Card.LEVEL) -> Card:
-	var suit = Card.SUIT.values().pick_random() # ??
+	var suit = Card.SUIT.values().pick_random()
 	var rank = Card.ranks_for_level(level).pick_random()
 	var card = Card.create(suit, rank)
 	return card

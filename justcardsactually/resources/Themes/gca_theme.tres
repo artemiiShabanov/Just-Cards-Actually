@@ -1,0 +1,50 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bsrmoxwfdthtj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wl4ym"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lnd3g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wl4ym"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxvf6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p1l6b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxvf6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vstbm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6jimy"]
+
+[resource]
+Button/constants/h_separation = 1
+Button/font_sizes/font_size = 30
+Button/styles/disabled = SubResource("StyleBoxFlat_wl4ym")
+Button/styles/focus = SubResource("StyleBoxEmpty_lnd3g")
+Button/styles/hover = SubResource("StyleBoxEmpty_wl4ym")
+Button/styles/normal = SubResource("StyleBoxFlat_gxvf6")
+Button/styles/pressed = SubResource("StyleBoxEmpty_p1l6b")
+CheckButton/constants/h_separation = 10
+CheckButton/icons/checked = null
+CheckButton/icons/checked_disabled = null
+CheckButton/icons/checked_disabled_mirrored = null
+CheckButton/icons/checked_mirrored = null
+CheckButton/icons/unchecked = null
+CheckButton/icons/unchecked_disabled = null
+CheckButton/icons/unchecked_disabled_mirrored = null
+CheckButton/icons/unchecked_mirrored = null
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_gxvf6")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_vstbm")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_6jimy")

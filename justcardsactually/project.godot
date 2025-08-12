@@ -28,7 +28,8 @@ folder_colors={
 "res://Card/shaders/": "red",
 "res://Card/textures/": "blue",
 "res://resources/Assets/": "blue",
-"res://resources/Sound/": "purple"
+"res://resources/Sound/": "purple",
+"res://resources/Themes/": "pink"
 }
 
 [filesystem]
