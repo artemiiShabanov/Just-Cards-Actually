@@ -8,7 +8,6 @@ var state: STATE = STATE.BOOSTER
 
 @onready var state_button = $StateButton
 @onready var dust_text = $DustContainer/DustText
-@onready var collection_text = $CollectionContainer/CollectionText
 @onready var debug_view = $Debug
 
 func _ready() -> void:
@@ -22,7 +21,7 @@ func _on_dust_updated():
 	dust_text.text = "%d" % Player.dust
 	
 func _on_collection_updated():
-	collection_text.text = "%d/%d" % [Player.collection.size(), Player.COLLECTION_FULL_SIZE]
+	state_button.text = "%d/%d" % [Player.collection.size(), Player.COLLECTION_FULL_SIZE]
 
 func _on_state_button_toggled(toggled_on: bool) -> void:
 	SoundPlayer.play_sound(SoundPlayer.SOUND.BAP)

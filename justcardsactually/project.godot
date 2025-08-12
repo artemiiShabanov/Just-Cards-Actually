@@ -13,7 +13,7 @@ config_version=5
 config/name="JustCardsActually"
 run/main_scene="uid://cy187l1134jxc"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://i5cb50h3w2mm"
 
 [autoload]
 

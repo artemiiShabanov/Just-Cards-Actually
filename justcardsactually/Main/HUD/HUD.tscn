@@ -1,9 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7w0s2hx2atic"]
+[gd_scene load_steps=6 format=3 uid="uid://c7w0s2hx2atic"]
 
 [ext_resource type="Script" uid="uid://cv0usdvnswltr" path="res://Main/HUD/hud.gd" id="1_g6jb3"]
 [ext_resource type="PackedScene" uid="uid://bpe04jrep5o6u" path="res://Debug/Debug.tscn" id="2_d4cuy"]
 
-[sub_resource type="ImageTexture" id="ImageTexture_r3el2"]
+[sub_resource type="Theme" id="Theme_mtr3h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yvalu"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ppp2q"]
+font_size = 32
+font_color = Color(0.580392, 0.215686, 1, 1)
+shadow_size = 3
+shadow_color = Color(1, 1, 1, 1)
+shadow_offset = Vector2(0, 0)
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -26,43 +36,29 @@ offset_top = -24.0
 offset_right = 22.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Collection"
-
-[node name="CollectionContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = -20.0
-offset_bottom = 20.0
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="CollectionText" type="Label" parent="CollectionContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "50/100"
+theme = SubResource("Theme_mtr3h")
+text = "🃏🃏🃏"
 
 [node name="DustContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 40.0
-offset_bottom = 20.0
-grow_vertical = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.5
+offset_right = 38.5
+offset_bottom = 45.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="DustContainer"]
+layout_mode = 2
+text = "✨"
+label_settings = SubResource("LabelSettings_yvalu")
+vertical_alignment = 1
 
 [node name="DustText" type="Label" parent="DustContainer"]
 layout_mode = 2
 text = "50"
-
-[node name="TextureRect" type="TextureRect" parent="DustContainer"]
-layout_mode = 2
-texture = SubResource("ImageTexture_r3el2")
+label_settings = SubResource("LabelSettings_ppp2q")
 
 [node name="DebugButton" type="Button" parent="."]
 layout_mode = 1

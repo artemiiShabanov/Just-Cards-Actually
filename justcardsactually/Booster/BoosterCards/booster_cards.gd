@@ -67,10 +67,10 @@ func _hide_card(index: int):
 func _dust_card(card_node: CardNode):
 	SoundPlayer.play_sound(SoundPlayer.SOUND.DUST)
 	var e = explosion_scene.instantiate()
+	add_child(e)
 	e.global_position = card_node.global_position
 	e.global_rotation = card_node.global_rotation
 	e.emitting = true
-	add_child(e)
 	remove_child(card_node)
 	await get_tree().create_timer(0.3).timeout
 
