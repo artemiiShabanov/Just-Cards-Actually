@@ -3,9 +3,7 @@
 [ext_resource type="Script" uid="uid://cv0usdvnswltr" path="res://Main/HUD/hud.gd" id="1_g6jb3"]
 [ext_resource type="PackedScene" uid="uid://bpe04jrep5o6u" path="res://Debug/Debug.tscn" id="2_d4cuy"]
 [ext_resource type="Theme" uid="uid://bsrmoxwfdthtj" path="res://resources/Themes/gca_theme.tres" id="2_ijiei"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_yvalu"]
-font_size = 32
+[ext_resource type="Texture2D" uid="uid://cx1un4l5wiyk0" path="res://resources/Assets/chip.png" id="3_yvalu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ppp2q"]
 font_size = 32
@@ -44,16 +42,16 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -38.5
-offset_right = 38.5
-offset_bottom = 45.0
+offset_left = -43.0
+offset_top = 13.0
+offset_right = 43.0
+offset_bottom = 58.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="DustContainer"]
+[node name="TextureRect" type="TextureRect" parent="DustContainer"]
 layout_mode = 2
-text = "✨"
-label_settings = SubResource("LabelSettings_yvalu")
-vertical_alignment = 1
+texture = ExtResource("3_yvalu")
+expand_mode = 2
 
 [node name="DustText" type="Label" parent="DustContainer"]
 layout_mode = 2

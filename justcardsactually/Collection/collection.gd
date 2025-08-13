@@ -10,6 +10,7 @@ var collection: Array
 var current_page: int = 0
 var selected_index: int = -1
 var pages_count: int
+var hidden = true
 
 @onready var left_button: Button = $CanvasLayer/LeftButton
 @onready var right_button: Button = $CanvasLayer/RightButton
@@ -19,24 +20,23 @@ var pages_count: int
 
 var cards: Array
 
+
 func _ready() -> void:
 	Player.collection_update.connect(_on_collection_updated)
-	
-	collection = Player.collection
-	var count = collection.size()
-	pages_count = ceil(count / PAGE_SIZE)
-	
-	_update_buttons()
-	_update_cards()
+	_on_collection_updated()
+
 
 func _hide():
+	hidden = true
 	selected_index = -1
 	left_button.hide()
 	right_button.hide()
 	_clear_cards()
-	_update_buttons()
-	
+
+
+
 func _show():
+	hidden = false
 	left_button.show()
 	right_button.show()
 	_update_cards()
@@ -50,14 +50,14 @@ func _disable_buttons():
 
 func _update_buttons():
 	left_button.disabled = current_page <= 0
-	right_button.disabled = current_page >= pages_count
+	right_button.disabled = current_page >= pages_count - 1
 
 
 func _clear_cards():
 	for card in cards:
 		(card as Node3D).queue_free()
 	cards.clear()
-	
+
 
 func _update_cards():
 	_clear_cards()
@@ -99,8 +99,13 @@ func _move_to_back():
 
 
 func _on_collection_updated():
-	pass
-	#get_tree().reload_current_scene()
+	collection = Player.collection
+	var count = collection.size()
+	pages_count = ceil(float(count) / PAGE_SIZE)
+	
+	if !hidden:
+		_update_buttons()
+		_update_cards()
 
 
 func _on_left_button_pressed() -> void:

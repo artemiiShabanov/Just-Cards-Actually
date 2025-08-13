@@ -11,6 +11,9 @@
 [sub_resource type="Environment" id="Environment_ps1la"]
 background_mode = 3
 sky_custom_fov = 46.4
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.7
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hh5pf"]
 shader = ExtResource("5_u2i7p")
@@ -26,11 +29,6 @@ script = ExtResource("1_lxy7q")
 [node name="Collection" parent="." instance=ExtResource("3_amygn")]
 
 [node name="Booster" parent="." instance=ExtResource("4_ps1la")]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8053, 45.6197, 61.5699)
-visible = false
-light_energy = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ps1la")
@@ -51,6 +49,7 @@ texture = ExtResource("6_u2i7p")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.781727, 0, 0.62362, 0, 1, 0, -0.62362, 0, 0.781727, 16.2172, 12.262, 45.0173)
+light_color = Color(1, 0.874, 0.72, 1)
 light_energy = 30.0
 light_indirect_energy = 16.0
 spot_range = 108.227

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://tingqai41etc"]
+[gd_scene load_steps=17 format=3 uid="uid://tingqai41etc"]
 
 [ext_resource type="Script" uid="uid://djofvpjo0uf3p" path="res://Booster/BoosterPack/booster_pack.gd" id="1_s2621"]
 [ext_resource type="PackedScene" uid="uid://b566p5r4nso5w" path="res://resources/Assets/booster_pack_tcg_pack.glb" id="2_r7bcm"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://deqp6nxyeyfit" path="res://resources/Assets/PackPay2.png" id="9_waaru"]
 [ext_resource type="Texture2D" uid="uid://w7c1baf2p6ls" path="res://resources/Assets/PackPay3.png" id="10_u53y2"]
 [ext_resource type="Texture2D" uid="uid://rb2pi7btabq1" path="res://resources/Assets/PackPay4.png" id="11_ahwt7"]
+[ext_resource type="Texture2D" uid="uid://dfptoy0olwx71" path="res://resources/Assets/PackPay5.png" id="12_u53y2"]
+[ext_resource type="Texture2D" uid="uid://b2hduj0x5ifmo" path="res://resources/Assets/PackPay6.png" id="13_ahwt7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mkjir"]
 margin = 0.0
@@ -57,17 +59,14 @@ animations = [{
 "texture": ExtResource("11_ahwt7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_u53y2")
+"texture": ExtResource("12_u53y2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_waaru")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_qu6p4")
+"texture": ExtResource("13_ahwt7")
 }],
 "loop": true,
 "name": &"pay",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_usvks"]
