@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dvu6flelip2wd" path="res://Card/textures/common/back.png" id="2_qjekd"]
 [ext_resource type="Texture2D" uid="uid://mxduoouq3kbk" path="res://Card/textures/cards/W10.png" id="3_gnwtb"]
 [ext_resource type="Texture2D" uid="uid://b0xhaptmg0cpr" path="res://Card/textures/common/mask2.png" id="4_qjekd"]
-[ext_resource type="Texture2D" uid="uid://bb6xthb5waufd" path="res://Card/textures/cards/head.png" id="5_duvqm"]
+[ext_resource type="Texture2D" uid="uid://co4wvb1ta105i" path="res://Card/textures/cards/W10I.png" id="5_gnwtb"]
 [ext_resource type="Texture2D" uid="uid://dopou6inokibo" path="res://Card/textures/suit/WBG.png" id="6_gnwtb"]
 
 [resource]
@@ -24,6 +24,6 @@ shader_parameter/alphaThreshold = 0.5
 shader_parameter/maskTexture = ExtResource("4_qjekd")
 shader_parameter/depth1 = 0.0
 shader_parameter/depth2 = 0.0
-shader_parameter/texture2 = ExtResource("5_duvqm")
+shader_parameter/texture2 = ExtResource("5_gnwtb")
 shader_parameter/depth3 = 0.0
 shader_parameter/texture3 = ExtResource("6_gnwtb")
