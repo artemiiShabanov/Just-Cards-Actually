@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb6xthb5waufd"
-path.s3tc="res://.godot/imported/head.png-a1e48e34709181586215e8d5b515829b.s3tc.ctex"
+uid="uid://dqx817ll0gobn"
+path.s3tc="res://.godot/imported/EEI.png-25db9a1db20ff28fdcbbd9083112cf5d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Card/textures/cards/head.png"
-dest_files=["res://.godot/imported/head.png-a1e48e34709181586215e8d5b515829b.s3tc.ctex"]
+source_file="res://Card/textures/cards/EEI.png"
+dest_files=["res://.godot/imported/EEI.png-25db9a1db20ff28fdcbbd9083112cf5d.s3tc.ctex"]
 
 [params]
 

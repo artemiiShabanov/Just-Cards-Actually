@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://2pm3wnln1amf" path="res://Card/textures/cards/EJK.png" id="3_3yudb"]
 [ext_resource type="Texture2D" uid="uid://b0xhaptmg0cpr" path="res://Card/textures/common/mask2.png" id="3_qnun6"]
 [ext_resource type="Texture2D" uid="uid://qejc01f548fg" path="res://Card/textures/common/shine.png" id="5_vk20f"]
-[ext_resource type="Texture2D" uid="uid://bb6xthb5waufd" path="res://Card/textures/cards/head.png" id="6_ggt3l"]
+[ext_resource type="Texture2D" uid="uid://bj45rfyai35w5" path="res://Card/textures/cards/EJKI.png" id="6_3yudb"]
 [ext_resource type="Texture2D" uid="uid://c8417myodxpqg" path="res://Card/textures/suit/EBG.png" id="7_3yudb"]
 
 [resource]
@@ -26,6 +26,6 @@ shader_parameter/maskTexture = ExtResource("3_qnun6")
 shader_parameter/depth1 = 0.0
 shader_parameter/texture1 = ExtResource("5_vk20f")
 shader_parameter/depth2 = 0.1
-shader_parameter/texture2 = ExtResource("6_ggt3l")
+shader_parameter/texture2 = ExtResource("6_3yudb")
 shader_parameter/depth3 = 0.25
 shader_parameter/texture3 = ExtResource("7_3yudb")

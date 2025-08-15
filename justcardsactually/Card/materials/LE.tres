@@ -5,17 +5,17 @@
 [ext_resource type="Texture2D" uid="uid://22fq1f8f7o4i" path="res://Card/textures/cards/LE.png" id="3_cwdam"]
 [ext_resource type="Texture2D" uid="uid://b0xhaptmg0cpr" path="res://Card/textures/common/mask2.png" id="4_o5em0"]
 [ext_resource type="Texture2D" uid="uid://qejc01f548fg" path="res://Card/textures/common/shine.png" id="5_twcl4"]
-[ext_resource type="Texture2D" uid="uid://bb6xthb5waufd" path="res://Card/textures/cards/head.png" id="6_2ph74"]
+[ext_resource type="Texture2D" uid="uid://diccerh6b6tw5" path="res://Card/textures/cards/LEI.png" id="6_cwdam"]
 [ext_resource type="Texture2D" uid="uid://l1kwkchtbs1w" path="res://Card/textures/suit/LBG.png" id="7_cwdam"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_cwdam")
-shader_parameter/roughnessInside = 0.197
-shader_parameter/roughnessOutside = 0.089
-shader_parameter/specularInside = 0.3
-shader_parameter/specularOutside = 0.5
-shader_parameter/metallicInside = 0.8
+shader_parameter/roughnessInside = 0.62
+shader_parameter/roughnessOutside = 0.75
+shader_parameter/specularInside = 1.0
+shader_parameter/specularOutside = 1.0
+shader_parameter/metallicInside = 1.0
 shader_parameter/metallicOutside = 1.0
 shader_parameter/mainTexture = ExtResource("3_cwdam")
 shader_parameter/backTexture = ExtResource("2_o5em0")
@@ -26,6 +26,6 @@ shader_parameter/maskTexture = ExtResource("4_o5em0")
 shader_parameter/depth1 = 0.0
 shader_parameter/texture1 = ExtResource("5_twcl4")
 shader_parameter/depth2 = 0.1
-shader_parameter/texture2 = ExtResource("6_2ph74")
+shader_parameter/texture2 = ExtResource("6_cwdam")
 shader_parameter/depth3 = 0.25
 shader_parameter/texture3 = ExtResource("7_cwdam")
