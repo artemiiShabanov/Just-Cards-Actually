@@ -64,6 +64,7 @@ func _on_rotator_tap_detected() -> void:
 
 
 func _open_booster():
+	Input.vibrate_handheld(100, 0.3)
 	var is_free = booster.type == BoosterPack.TYPE.FREE
 	var cards = Player.generate_booster(is_free)
 	opening = true

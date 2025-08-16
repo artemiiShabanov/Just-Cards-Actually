@@ -44,8 +44,10 @@ func _handle_tap(node: CardNode):
 		showed.append(index)
 		
 		if node.dustable:
+			Input.vibrate_handheld(100, 0.4)
 			await _dust_card(node)
 		else:
+			Input.vibrate_handheld(100, 0.2)
 			await _hide_card(index)
 		
 		if showed.size() >= Player.BOOSTER_SIZE:
@@ -86,5 +88,6 @@ func _spread():
 	for i in range(0, card_nodes.size()):
 		var card_node = card_nodes[i] as Node3D
 		var tween := create_tween()
+		Input.vibrate_handheld(30, 0.6)
 		tween.tween_property(card_node, "global_position", (markers_start[i] as Marker3D).global_position, MOVE_DURATION).set_ease(Tween.EASE_IN_OUT)
 		await tween.finished

@@ -75,6 +75,7 @@ func _update_cards():
 
 func _handle_tap(node):
 	var index = cards.find(node)
+	Input.vibrate_handheld(30, 0.2)
 	if selected_index == -1:
 		_move_to_front(index)
 		selected_index = index
