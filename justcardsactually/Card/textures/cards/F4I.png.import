@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ceivjmpglcand"
 path.s3tc="res://.godot/imported/F4I.png-4418d255b0f91dd304e2eaad2b66e8ce.s3tc.ctex"
+path.etc2="res://.godot/imported/F4I.png-4418d255b0f91dd304e2eaad2b66e8ce.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/F4I.png"
-dest_files=["res://.godot/imported/F4I.png-4418d255b0f91dd304e2eaad2b66e8ce.s3tc.ctex"]
+dest_files=["res://.godot/imported/F4I.png-4418d255b0f91dd304e2eaad2b66e8ce.s3tc.ctex", "res://.godot/imported/F4I.png-4418d255b0f91dd304e2eaad2b66e8ce.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bj45rfyai35w5"
 path.s3tc="res://.godot/imported/EJKI.png-02643ad31d660e803b4da3a3a88cc936.s3tc.ctex"
+path.etc2="res://.godot/imported/EJKI.png-02643ad31d660e803b4da3a3a88cc936.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/EJKI.png"
-dest_files=["res://.godot/imported/EJKI.png-02643ad31d660e803b4da3a3a88cc936.s3tc.ctex"]
+dest_files=["res://.godot/imported/EJKI.png-02643ad31d660e803b4da3a3a88cc936.s3tc.ctex", "res://.godot/imported/EJKI.png-02643ad31d660e803b4da3a3a88cc936.etc2.ctex"]
 
 [params]
 

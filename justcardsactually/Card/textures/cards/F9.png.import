@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bk87mywxgf7oc"
 path.s3tc="res://.godot/imported/F9.png-3384e12c474aac028ac00567a8568460.s3tc.ctex"
+path.etc2="res://.godot/imported/F9.png-3384e12c474aac028ac00567a8568460.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/F9.png"
-dest_files=["res://.godot/imported/F9.png-3384e12c474aac028ac00567a8568460.s3tc.ctex"]
+dest_files=["res://.godot/imported/F9.png-3384e12c474aac028ac00567a8568460.s3tc.ctex", "res://.godot/imported/F9.png-3384e12c474aac028ac00567a8568460.etc2.ctex"]
 
 [params]
 

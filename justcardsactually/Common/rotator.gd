@@ -8,7 +8,7 @@ signal tap_detected
 var tap_start_time: float = 0.0
 
 # Settings
-@export var rotation_sensitivity: float = 0.01
+@export var rotation_sensitivity: float = 0.05
 @export var damping: float = 0.1
 @export var return_speed: float = 10
 @export var short_tap_threshold: float = 0.2

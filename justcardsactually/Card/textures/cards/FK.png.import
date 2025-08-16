@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdlkj20tdc4td"
 path.s3tc="res://.godot/imported/FK.png-f4ff16f3b1107b1f383b39671f9bee9b.s3tc.ctex"
+path.etc2="res://.godot/imported/FK.png-f4ff16f3b1107b1f383b39671f9bee9b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/FK.png"
-dest_files=["res://.godot/imported/FK.png-f4ff16f3b1107b1f383b39671f9bee9b.s3tc.ctex"]
+dest_files=["res://.godot/imported/FK.png-f4ff16f3b1107b1f383b39671f9bee9b.s3tc.ctex", "res://.godot/imported/FK.png-f4ff16f3b1107b1f383b39671f9bee9b.etc2.ctex"]
 
 [params]
 

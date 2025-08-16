@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx1un4l5wiyk0"
 path.s3tc="res://.godot/imported/chip.png-133cc7b3b9c4d7a41ab8666fe04b7208.s3tc.ctex"
+path.etc2="res://.godot/imported/chip.png-133cc7b3b9c4d7a41ab8666fe04b7208.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://resources/Assets/chip.png"
-dest_files=["res://.godot/imported/chip.png-133cc7b3b9c4d7a41ab8666fe04b7208.s3tc.ctex"]
+dest_files=["res://.godot/imported/chip.png-133cc7b3b9c4d7a41ab8666fe04b7208.s3tc.ctex", "res://.godot/imported/chip.png-133cc7b3b9c4d7a41ab8666fe04b7208.etc2.ctex"]
 
 [params]
 

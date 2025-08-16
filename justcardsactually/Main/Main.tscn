@@ -34,7 +34,7 @@ script = ExtResource("1_lxy7q")
 environment = SubResource("Environment_ps1la")
 
 [node name="Camera3D" type="Camera3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.2759)
 fov = 81.5625
 
 [node name="CanvasLayer" type="CanvasLayer" parent="WorldEnvironment"]
@@ -43,8 +43,8 @@ layer = -1
 [node name="Sprite2D" type="Sprite2D" parent="WorldEnvironment/CanvasLayer"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_hh5pf")
-position = Vector2(576, 577.5)
-scale = Vector2(0.25, 0.25)
+position = Vector2(667, 1407)
+scale = Vector2(0.9166, 0.8926)
 texture = ExtResource("6_u2i7p")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]

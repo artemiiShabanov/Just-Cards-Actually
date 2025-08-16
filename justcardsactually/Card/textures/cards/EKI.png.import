@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dicdskotfmhlq"
 path.s3tc="res://.godot/imported/EKI.png-c6571f9ad2f6967d43c55b028c0f49d7.s3tc.ctex"
+path.etc2="res://.godot/imported/EKI.png-c6571f9ad2f6967d43c55b028c0f49d7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/EKI.png"
-dest_files=["res://.godot/imported/EKI.png-c6571f9ad2f6967d43c55b028c0f49d7.s3tc.ctex"]
+dest_files=["res://.godot/imported/EKI.png-c6571f9ad2f6967d43c55b028c0f49d7.s3tc.ctex", "res://.godot/imported/EKI.png-c6571f9ad2f6967d43c55b028c0f49d7.etc2.ctex"]
 
 [params]
 

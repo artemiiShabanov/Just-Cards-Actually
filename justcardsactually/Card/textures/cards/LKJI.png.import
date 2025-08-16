@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1xubvx1rak4d"
 path.s3tc="res://.godot/imported/LKJI.png-d58a40cbfbc3dc957eccafb606b2a44a.s3tc.ctex"
+path.etc2="res://.godot/imported/LKJI.png-d58a40cbfbc3dc957eccafb606b2a44a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/LKJI.png"
-dest_files=["res://.godot/imported/LKJI.png-d58a40cbfbc3dc957eccafb606b2a44a.s3tc.ctex"]
+dest_files=["res://.godot/imported/LKJI.png-d58a40cbfbc3dc957eccafb606b2a44a.s3tc.ctex", "res://.godot/imported/LKJI.png-d58a40cbfbc3dc957eccafb606b2a44a.etc2.ctex"]
 
 [params]
 

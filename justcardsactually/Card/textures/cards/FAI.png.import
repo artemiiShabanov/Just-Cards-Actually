@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxru8euy4b4uc"
 path.s3tc="res://.godot/imported/FAI.png-36ea1dc4e83a57ae0c800c9e3c4e659b.s3tc.ctex"
+path.etc2="res://.godot/imported/FAI.png-36ea1dc4e83a57ae0c800c9e3c4e659b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/FAI.png"
-dest_files=["res://.godot/imported/FAI.png-36ea1dc4e83a57ae0c800c9e3c4e659b.s3tc.ctex"]
+dest_files=["res://.godot/imported/FAI.png-36ea1dc4e83a57ae0c800c9e3c4e659b.s3tc.ctex", "res://.godot/imported/FAI.png-36ea1dc4e83a57ae0c800c9e3c4e659b.etc2.ctex"]
 
 [params]
 

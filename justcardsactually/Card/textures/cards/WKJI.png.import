@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnd7gurdpalhj"
 path.s3tc="res://.godot/imported/WKJI.png-02e3447657e279f7211f16cac1c4105f.s3tc.ctex"
+path.etc2="res://.godot/imported/WKJI.png-02e3447657e279f7211f16cac1c4105f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/WKJI.png"
-dest_files=["res://.godot/imported/WKJI.png-02e3447657e279f7211f16cac1c4105f.s3tc.ctex"]
+dest_files=["res://.godot/imported/WKJI.png-02e3447657e279f7211f16cac1c4105f.s3tc.ctex", "res://.godot/imported/WKJI.png-02e3447657e279f7211f16cac1c4105f.etc2.ctex"]
 
 [params]
 

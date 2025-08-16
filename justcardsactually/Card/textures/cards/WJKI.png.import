@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dux0kiv6n08m1"
 path.s3tc="res://.godot/imported/WJKI.png-e718a816d2c2c926bfb162c4fb8a5f44.s3tc.ctex"
+path.etc2="res://.godot/imported/WJKI.png-e718a816d2c2c926bfb162c4fb8a5f44.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/WJKI.png"
-dest_files=["res://.godot/imported/WJKI.png-e718a816d2c2c926bfb162c4fb8a5f44.s3tc.ctex"]
+dest_files=["res://.godot/imported/WJKI.png-e718a816d2c2c926bfb162c4fb8a5f44.s3tc.ctex", "res://.godot/imported/WJKI.png-e718a816d2c2c926bfb162c4fb8a5f44.etc2.ctex"]
 
 [params]
 

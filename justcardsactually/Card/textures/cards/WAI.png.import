@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cu2jc1a0uuv12"
 path.s3tc="res://.godot/imported/WAI.png-ed791a07b5770f1f487d9946538b138d.s3tc.ctex"
+path.etc2="res://.godot/imported/WAI.png-ed791a07b5770f1f487d9946538b138d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/WAI.png"
-dest_files=["res://.godot/imported/WAI.png-ed791a07b5770f1f487d9946538b138d.s3tc.ctex"]
+dest_files=["res://.godot/imported/WAI.png-ed791a07b5770f1f487d9946538b138d.s3tc.ctex", "res://.godot/imported/WAI.png-ed791a07b5770f1f487d9946538b138d.etc2.ctex"]
 
 [params]
 

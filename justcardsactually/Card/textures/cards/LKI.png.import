@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfknwc5l2beb4"
 path.s3tc="res://.godot/imported/LKI.png-3efd21c1e5c230fa3cb30557380b5ef8.s3tc.ctex"
+path.etc2="res://.godot/imported/LKI.png-3efd21c1e5c230fa3cb30557380b5ef8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/LKI.png"
-dest_files=["res://.godot/imported/LKI.png-3efd21c1e5c230fa3cb30557380b5ef8.s3tc.ctex"]
+dest_files=["res://.godot/imported/LKI.png-3efd21c1e5c230fa3cb30557380b5ef8.s3tc.ctex", "res://.godot/imported/LKI.png-3efd21c1e5c230fa3cb30557380b5ef8.etc2.ctex"]
 
 [params]
 

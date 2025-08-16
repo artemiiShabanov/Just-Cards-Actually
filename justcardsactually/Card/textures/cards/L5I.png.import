@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://xgilh2ixpc32"
 path.s3tc="res://.godot/imported/L5I.png-64b3bb654c38e9ec8b1fd472e0eeafd2.s3tc.ctex"
+path.etc2="res://.godot/imported/L5I.png-64b3bb654c38e9ec8b1fd472e0eeafd2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/L5I.png"
-dest_files=["res://.godot/imported/L5I.png-64b3bb654c38e9ec8b1fd472e0eeafd2.s3tc.ctex"]
+dest_files=["res://.godot/imported/L5I.png-64b3bb654c38e9ec8b1fd472e0eeafd2.s3tc.ctex", "res://.godot/imported/L5I.png-64b3bb654c38e9ec8b1fd472e0eeafd2.etc2.ctex"]
 
 [params]
 

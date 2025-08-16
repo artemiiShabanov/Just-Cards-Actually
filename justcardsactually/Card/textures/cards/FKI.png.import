@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://docu3tudephsk"
 path.s3tc="res://.godot/imported/FKI.png-a9f2240b92f5787297673ff2eef08558.s3tc.ctex"
+path.etc2="res://.godot/imported/FKI.png-a9f2240b92f5787297673ff2eef08558.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/FKI.png"
-dest_files=["res://.godot/imported/FKI.png-a9f2240b92f5787297673ff2eef08558.s3tc.ctex"]
+dest_files=["res://.godot/imported/FKI.png-a9f2240b92f5787297673ff2eef08558.s3tc.ctex", "res://.godot/imported/FKI.png-a9f2240b92f5787297673ff2eef08558.etc2.ctex"]
 
 [params]
 

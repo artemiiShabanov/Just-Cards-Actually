@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cm4a0q2c4171y"
 path.s3tc="res://.godot/imported/FQI.png-b43b89c514efb22ec0f50bcee19eee54.s3tc.ctex"
+path.etc2="res://.godot/imported/FQI.png-b43b89c514efb22ec0f50bcee19eee54.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/FQI.png"
-dest_files=["res://.godot/imported/FQI.png-b43b89c514efb22ec0f50bcee19eee54.s3tc.ctex"]
+dest_files=["res://.godot/imported/FQI.png-b43b89c514efb22ec0f50bcee19eee54.s3tc.ctex", "res://.godot/imported/FQI.png-b43b89c514efb22ec0f50bcee19eee54.etc2.ctex"]
 
 [params]
 

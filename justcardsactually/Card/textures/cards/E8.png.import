@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bslvgpurnur2e"
 path.s3tc="res://.godot/imported/E8.png-88f8a51328643228ff68464d1c7b691a.s3tc.ctex"
+path.etc2="res://.godot/imported/E8.png-88f8a51328643228ff68464d1c7b691a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/E8.png"
-dest_files=["res://.godot/imported/E8.png-88f8a51328643228ff68464d1c7b691a.s3tc.ctex"]
+dest_files=["res://.godot/imported/E8.png-88f8a51328643228ff68464d1c7b691a.s3tc.ctex", "res://.godot/imported/E8.png-88f8a51328643228ff68464d1c7b691a.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjnuiwvflt40d"
 path.s3tc="res://.godot/imported/L4.png-e1e2c98c52478b773d66491633364267.s3tc.ctex"
+path.etc2="res://.godot/imported/L4.png-e1e2c98c52478b773d66491633364267.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/L4.png"
-dest_files=["res://.godot/imported/L4.png-e1e2c98c52478b773d66491633364267.s3tc.ctex"]
+dest_files=["res://.godot/imported/L4.png-e1e2c98c52478b773d66491633364267.s3tc.ctex", "res://.godot/imported/L4.png-e1e2c98c52478b773d66491633364267.etc2.ctex"]
 
 [params]
 

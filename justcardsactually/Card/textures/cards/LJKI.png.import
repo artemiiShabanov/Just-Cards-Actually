@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://r333mv2tsr1c"
 path.s3tc="res://.godot/imported/LJKI.png-4cc5424feb5fbc3acc527dff6112fd62.s3tc.ctex"
+path.etc2="res://.godot/imported/LJKI.png-4cc5424feb5fbc3acc527dff6112fd62.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/LJKI.png"
-dest_files=["res://.godot/imported/LJKI.png-4cc5424feb5fbc3acc527dff6112fd62.s3tc.ctex"]
+dest_files=["res://.godot/imported/LJKI.png-4cc5424feb5fbc3acc527dff6112fd62.s3tc.ctex", "res://.godot/imported/LJKI.png-4cc5424feb5fbc3acc527dff6112fd62.etc2.ctex"]
 
 [params]
 

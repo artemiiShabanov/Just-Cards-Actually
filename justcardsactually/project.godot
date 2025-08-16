@@ -13,13 +13,33 @@ config_version=5
 config/name="JustCardsActually"
 run/main_scene="uid://cy187l1134jxc"
 config/features=PackedStringArray("4.4", "Mobile")
+boot_splash/bg_color=Color(0.186731, 0.111972, 0.16566, 1)
+boot_splash/image="uid://dpdbpqp3tvauw"
 config/icon="uid://i5cb50h3w2mm"
+
+[audio]
+
+general/ios/session_category=3
 
 [autoload]
 
 Player="*res://Global/player.gd"
 Storage="*res://Global/storage.gd"
 SoundPlayer="*res://Global/sound_player.gd"
+
+[display]
+
+window/size/viewport_width=1179
+window/size/viewport_height=2277
+window/stretch/mode="viewport"
+window/handheld/orientation=1
+window/ios/hide_home_indicator=false
+window/ios/hide_status_bar=false
+window/ios/suppress_ui_gesture=false
+
+[editor]
+
+export/convert_text_resources_to_binary=false
 
 [file_customization]
 
@@ -39,3 +59,4 @@ import/blender/enabled=false
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

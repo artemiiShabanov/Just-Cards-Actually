@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://5mhmrnvena00"
 path.s3tc="res://.godot/imported/E10I.png-f1a75960838faee69ccecf366c8ec2af.s3tc.ctex"
+path.etc2="res://.godot/imported/E10I.png-f1a75960838faee69ccecf366c8ec2af.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/E10I.png"
-dest_files=["res://.godot/imported/E10I.png-f1a75960838faee69ccecf366c8ec2af.s3tc.ctex"]
+dest_files=["res://.godot/imported/E10I.png-f1a75960838faee69ccecf366c8ec2af.s3tc.ctex", "res://.godot/imported/E10I.png-f1a75960838faee69ccecf366c8ec2af.etc2.ctex"]
 
 [params]
 

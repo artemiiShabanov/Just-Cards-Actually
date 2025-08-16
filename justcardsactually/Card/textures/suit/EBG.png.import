@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8417myodxpqg"
 path.s3tc="res://.godot/imported/EBG.png-691a5cde3e9c6f0ff165c80d8a03ae33.s3tc.ctex"
+path.etc2="res://.godot/imported/EBG.png-691a5cde3e9c6f0ff165c80d8a03ae33.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/suit/EBG.png"
-dest_files=["res://.godot/imported/EBG.png-691a5cde3e9c6f0ff165c80d8a03ae33.s3tc.ctex"]
+dest_files=["res://.godot/imported/EBG.png-691a5cde3e9c6f0ff165c80d8a03ae33.s3tc.ctex", "res://.godot/imported/EBG.png-691a5cde3e9c6f0ff165c80d8a03ae33.etc2.ctex"]
 
 [params]
 

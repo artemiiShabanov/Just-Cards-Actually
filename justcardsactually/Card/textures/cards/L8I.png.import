@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgb0o82j847uq"
 path.s3tc="res://.godot/imported/L8I.png-880e956955bb7cee4927cd8b8fb7caa6.s3tc.ctex"
+path.etc2="res://.godot/imported/L8I.png-880e956955bb7cee4927cd8b8fb7caa6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/L8I.png"
-dest_files=["res://.godot/imported/L8I.png-880e956955bb7cee4927cd8b8fb7caa6.s3tc.ctex"]
+dest_files=["res://.godot/imported/L8I.png-880e956955bb7cee4927cd8b8fb7caa6.s3tc.ctex", "res://.godot/imported/L8I.png-880e956955bb7cee4927cd8b8fb7caa6.etc2.ctex"]
 
 [params]
 

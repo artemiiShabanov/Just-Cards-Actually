@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cywik0y0r2t75"
 path.s3tc="res://.godot/imported/EQ.png-276a1ddcce04b3a345db83921982a479.s3tc.ctex"
+path.etc2="res://.godot/imported/EQ.png-276a1ddcce04b3a345db83921982a479.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/EQ.png"
-dest_files=["res://.godot/imported/EQ.png-276a1ddcce04b3a345db83921982a479.s3tc.ctex"]
+dest_files=["res://.godot/imported/EQ.png-276a1ddcce04b3a345db83921982a479.s3tc.ctex", "res://.godot/imported/EQ.png-276a1ddcce04b3a345db83921982a479.etc2.ctex"]
 
 [params]
 

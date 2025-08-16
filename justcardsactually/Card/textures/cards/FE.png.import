@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcqnshuh4ue3k"
 path.s3tc="res://.godot/imported/FE.png-76b3085623e5a5d7f2b2d4ff5dd73517.s3tc.ctex"
+path.etc2="res://.godot/imported/FE.png-76b3085623e5a5d7f2b2d4ff5dd73517.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/FE.png"
-dest_files=["res://.godot/imported/FE.png-76b3085623e5a5d7f2b2d4ff5dd73517.s3tc.ctex"]
+dest_files=["res://.godot/imported/FE.png-76b3085623e5a5d7f2b2d4ff5dd73517.s3tc.ctex", "res://.godot/imported/FE.png-76b3085623e5a5d7f2b2d4ff5dd73517.etc2.ctex"]
 
 [params]
 

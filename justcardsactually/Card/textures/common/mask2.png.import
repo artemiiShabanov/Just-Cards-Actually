@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0xhaptmg0cpr"
 path.s3tc="res://.godot/imported/mask2.png-f3fed1f126678f535079c078e52cbfa8.s3tc.ctex"
+path.etc2="res://.godot/imported/mask2.png-f3fed1f126678f535079c078e52cbfa8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/common/mask2.png"
-dest_files=["res://.godot/imported/mask2.png-f3fed1f126678f535079c078e52cbfa8.s3tc.ctex"]
+dest_files=["res://.godot/imported/mask2.png-f3fed1f126678f535079c078e52cbfa8.s3tc.ctex", "res://.godot/imported/mask2.png-f3fed1f126678f535079c078e52cbfa8.etc2.ctex"]
 
 [params]
 

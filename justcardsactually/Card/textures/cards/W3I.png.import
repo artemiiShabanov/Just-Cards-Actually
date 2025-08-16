@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjrwl11m8q6jl"
 path.s3tc="res://.godot/imported/W3I.png-22f2090b7c4a9dfc9a884d7de870ada1.s3tc.ctex"
+path.etc2="res://.godot/imported/W3I.png-22f2090b7c4a9dfc9a884d7de870ada1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/W3I.png"
-dest_files=["res://.godot/imported/W3I.png-22f2090b7c4a9dfc9a884d7de870ada1.s3tc.ctex"]
+dest_files=["res://.godot/imported/W3I.png-22f2090b7c4a9dfc9a884d7de870ada1.s3tc.ctex", "res://.godot/imported/W3I.png-22f2090b7c4a9dfc9a884d7de870ada1.etc2.ctex"]
 
 [params]
 

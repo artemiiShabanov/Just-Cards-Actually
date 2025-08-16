@@ -70,7 +70,7 @@ func _open_booster():
 	SoundPlayer.play_sound(SoundPlayer.SOUND.BOOSTER_OPEN)
 	await _end_booster()
 	
-	var booster_cards = booster_cards_scene.instantiate()
+	var booster_cards: BoosterCards = booster_cards_scene.instantiate()
 	booster_cards.cards = cards
 	booster_cards.done.connect(_on_booster_cards_done)
 	add_child(booster_cards)

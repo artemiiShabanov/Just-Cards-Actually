@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ciesb0eufh3mn"
 path.s3tc="res://.godot/imported/FJI.png-46ecfbba83583b46b142c368367b96ff.s3tc.ctex"
+path.etc2="res://.godot/imported/FJI.png-46ecfbba83583b46b142c368367b96ff.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Card/textures/cards/FJI.png"
-dest_files=["res://.godot/imported/FJI.png-46ecfbba83583b46b142c368367b96ff.s3tc.ctex"]
+dest_files=["res://.godot/imported/FJI.png-46ecfbba83583b46b142c368367b96ff.s3tc.ctex", "res://.godot/imported/FJI.png-46ecfbba83583b46b142c368367b96ff.etc2.ctex"]
 
 [params]
 
