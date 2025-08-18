@@ -12,7 +12,7 @@ const EPIC_CHANCE = 0.2
 const LEGENDARY_CHANCE = 0.05
 const EXTRA_RARE_CHANCE = 0.4
 const EXTRA_EPIC_CHANCE = 0.1
-const EXTRA_LEGENDARY_CHANCE = 0.01
+const EXTRA_LEGENDARY_CHANCE = 0.02
 
 const BOOSTER_COST = 50
 const DUST_VALUE = {
@@ -53,20 +53,20 @@ func generate_booster(is_free: bool) -> Array:
 	for i in range(0, RARITY_COUNT):
 		var r = rng.randf()
 		if r <= LEGENDARY_CHANCE:
-			booster.append(_generate_card(Card.LEVEL.LEGENDARY))
+			booster.append(_generate_card(Card.LEVEL.LEGENDARY, booster))
 		elif r <= EPIC_CHANCE:
-			booster.append(_generate_card(Card.LEVEL.EPIC))
+			booster.append(_generate_card(Card.LEVEL.EPIC, booster))
 		elif r <= RARE_CHANCE:
-			booster.append(_generate_card(Card.LEVEL.RARE))
+			booster.append(_generate_card(Card.LEVEL.RARE, booster))
 	
 	for i in range(0, EXTRA_RARITY_COUNT):
 		var r = rng.randf()
 		if r <= EXTRA_LEGENDARY_CHANCE:
-			booster.append(_generate_card(Card.LEVEL.LEGENDARY))
+			booster.append(_generate_card(Card.LEVEL.LEGENDARY, booster))
 		elif r <= EXTRA_EPIC_CHANCE:
-			booster.append(_generate_card(Card.LEVEL.EPIC))
+			booster.append(_generate_card(Card.LEVEL.EPIC, booster))
 		elif r <= EXTRA_RARE_CHANCE:
-			booster.append(_generate_card(Card.LEVEL.RARE))
+			booster.append(_generate_card(Card.LEVEL.RARE, booster))
 	
 	if !is_free and collection.size() < COLLECTION_FULL_SIZE:
 		while true:
@@ -78,7 +78,7 @@ func generate_booster(is_free: bool) -> Array:
 				break
 	
 	for i in range(0, BOOSTER_SIZE - booster.size()):
-		booster.append(_generate_card(Card.LEVEL.COMMON))
+		booster.append(_generate_card(Card.LEVEL.COMMON, booster))
 	booster.reverse()
 	return booster
 
@@ -107,11 +107,19 @@ func accept_booster(cards: Array, spent_dust: int, is_free: bool):
 	_mutate(is_free, filtered_cards, dust_diff)
 
 
-func _generate_card(level: Card.LEVEL) -> Card:
-	var suit = Card.SUIT.values().pick_random()
-	var rank = Card.ranks_for_level(level).pick_random()
-	var card = Card.create(suit, rank)
-	return card
+func _generate_card(level: Card.LEVEL, exclude: Array) -> Card:
+	while true:
+		var suit = Card.SUIT.values().pick_random()
+		var rank = Card.ranks_for_level(level).pick_random()
+		var card = Card.create(suit, rank)
+		var good = true
+		for e_card in exclude:
+			if e_card.description == card.description:
+				good = false
+				break
+		if good:
+			return card
+	return null
 
 
 # mutations

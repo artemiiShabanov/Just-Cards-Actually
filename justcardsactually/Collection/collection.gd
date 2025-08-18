@@ -12,8 +12,8 @@ var selected_index: int = -1
 var pages_count: int
 var hidden = true
 
-@onready var left_button: Button = $CanvasLayer/LeftButton
-@onready var right_button: Button = $CanvasLayer/RightButton
+@onready var left_button: Button = $CanvasLayer/MarginContainer/LeftButton
+@onready var right_button: Button = $CanvasLayer/MarginContainer2/RightButton
 
 @onready var marker_front: Marker3D = $FrontMarker
 @onready var markers: Array =[$Marker1, $Marker2, $Marker3, $Marker4, $Marker5, $Marker6, $Marker7, $Marker8, $Marker9]

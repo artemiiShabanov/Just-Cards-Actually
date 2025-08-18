@@ -1,15 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7w0s2hx2atic"]
+[gd_scene load_steps=8 format=3 uid="uid://c7w0s2hx2atic"]
 
 [ext_resource type="Script" uid="uid://cv0usdvnswltr" path="res://Main/HUD/hud.gd" id="1_g6jb3"]
 [ext_resource type="PackedScene" uid="uid://bpe04jrep5o6u" path="res://Debug/Debug.tscn" id="2_d4cuy"]
 [ext_resource type="Theme" uid="uid://bsrmoxwfdthtj" path="res://resources/Themes/gca_theme.tres" id="2_ijiei"]
+[ext_resource type="Texture2D" uid="uid://ci6wnoj4tppk8" path="res://resources/Assets/c_icon_2.png" id="3_sq62s"]
 [ext_resource type="Texture2D" uid="uid://cx1un4l5wiyk0" path="res://resources/Assets/chip.png" id="3_yvalu"]
+[ext_resource type="Texture2D" uid="uid://khp6wai8ih2f" path="res://resources/Assets/c_icon_1.png" id="4_rsm3c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ppp2q"]
-font_size = 32
+font_size = 50
 font_color = Color(0.580392, 0.215686, 1, 1)
 shadow_size = 3
-shadow_color = Color(1, 1, 1, 1)
+shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 0)
 
 [node name="Hud" type="Control"]
@@ -21,39 +23,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_g6jb3")
 
-[node name="StateButton" type="CheckButton" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -22.0
-offset_top = -24.0
-offset_right = 22.0
-grow_horizontal = 2
+offset_top = -83.0
+offset_right = 156.0
 grow_vertical = 0
-theme = ExtResource("2_ijiei")
-theme_override_font_sizes/font_size = 20
-text = "10/10"
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_bottom = 158
 
-[node name="DustContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -43.0
-offset_top = 13.0
-offset_right = 43.0
-offset_bottom = 58.0
-grow_horizontal = 2
+[node name="DustContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="DustContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/DustContainer"]
 layout_mode = 2
 texture = ExtResource("3_yvalu")
 expand_mode = 2
 
-[node name="DustText" type="Label" parent="DustContainer"]
+[node name="DustText" type="Label" parent="MarginContainer/DustContainer"]
 layout_mode = 2
 text = "50"
 label_settings = SubResource("LabelSettings_ppp2q")
@@ -65,8 +55,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -58.0
-offset_top = -31.0
+offset_left = -162.0
+offset_top = -204.0
+offset_right = -104.0
+offset_bottom = -173.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Debug
@@ -75,6 +67,29 @@ text = "Debug
 [node name="Debug" parent="." instance=ExtResource("2_d4cuy")]
 visible = false
 
-[connection signal="toggled" from="StateButton" to="." method="_on_state_button_toggled"]
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.0
+offset_top = -290.0
+offset_right = 122.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 100
+
+[node name="StateButton" type="CheckButton" parent="MarginContainer2"]
+layout_mode = 2
+theme = ExtResource("2_ijiei")
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 50
+theme_override_icons/checked = ExtResource("3_sq62s")
+theme_override_icons/unchecked = ExtResource("4_rsm3c")
+text = "10/10"
+
 [connection signal="pressed" from="DebugButton" to="." method="_on_debug_button_pressed"]
 [connection signal="toggled" from="DebugButton" to="." method="_on_debug_button_toggled"]
+[connection signal="toggled" from="MarginContainer2/StateButton" to="." method="_on_state_button_toggled"]

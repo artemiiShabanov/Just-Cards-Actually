@@ -43,13 +43,13 @@ layer = -1
 [node name="Sprite2D" type="Sprite2D" parent="WorldEnvironment/CanvasLayer"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_hh5pf")
-position = Vector2(667, 1407)
-scale = Vector2(0.9166, 0.8926)
+position = Vector2(608, 1251)
+scale = Vector2(0.433, 0.433)
 texture = ExtResource("6_u2i7p")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.781727, 0, 0.62362, 0, 1, 0, -0.62362, 0, 0.781727, 16.2172, 12.262, 45.0173)
-light_color = Color(1, 0.874, 0.72, 1)
+light_color = Color(1, 0.946, 0.88, 1)
 light_energy = 30.0
 light_indirect_energy = 16.0
 spot_range = 108.227
@@ -57,5 +57,8 @@ spot_range = 108.227
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_hh5pf")
 autoplay = true
+
+[node name="FocalPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 
 [connection signal="state_changed" from="CanvasLayer/HUD" to="." method="_on_hud_state_changed"]

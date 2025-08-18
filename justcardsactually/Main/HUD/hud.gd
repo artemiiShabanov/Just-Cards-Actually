@@ -6,8 +6,8 @@ signal state_changed(state: STATE)
 
 var state: STATE = STATE.BOOSTER
 
-@onready var state_button = $StateButton
-@onready var dust_text = $DustContainer/DustText
+@onready var state_button = $MarginContainer2/StateButton
+@onready var dust_text = $MarginContainer/DustContainer/DustText
 @onready var debug_view = $Debug
 
 func _ready() -> void:

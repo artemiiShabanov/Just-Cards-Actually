@@ -30,13 +30,14 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 
 [resource]
 Button/constants/h_separation = 1
-Button/font_sizes/font_size = 30
+Button/font_sizes/font_size = 70
 Button/styles/disabled = SubResource("StyleBoxFlat_wl4ym")
 Button/styles/focus = SubResource("StyleBoxEmpty_lnd3g")
 Button/styles/hover = SubResource("StyleBoxEmpty_wl4ym")
 Button/styles/normal = SubResource("StyleBoxFlat_gxvf6")
 Button/styles/pressed = SubResource("StyleBoxEmpty_p1l6b")
 CheckButton/constants/h_separation = 10
+CheckButton/font_sizes/font_size = 70
 CheckButton/icons/checked = null
 CheckButton/icons/checked_disabled = null
 CheckButton/icons/checked_disabled_mirrored = null
