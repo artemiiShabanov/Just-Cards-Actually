@@ -88,6 +88,19 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 transparent_bg = true
 size = Vector2i(350, 525)
 
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 55
+
+[node name="TimerLabel" type="Label" parent="SubViewport/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewport"]
 position = Vector2(175, 262.5)
 sprite_frames = SubResource("SpriteFrames_7eci3")
@@ -97,3 +110,8 @@ autoplay = "pay"
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.48591)
 texture = SubResource("ViewportTexture_usvks")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

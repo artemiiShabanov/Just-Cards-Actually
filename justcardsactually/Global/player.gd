@@ -14,6 +14,8 @@ const EXTRA_RARE_CHANCE = 0.4
 const EXTRA_EPIC_CHANCE = 0.1
 const EXTRA_LEGENDARY_CHANCE = 0.02
 
+const SECS_PER_DAY: int = 24 * 60 * 60
+
 const BOOSTER_COST = 50
 const DUST_VALUE = {
 	Card.LEVEL.COMMON: 3,
@@ -33,6 +35,7 @@ var rng = RandomNumberGenerator.new()
 var collection: Array
 var dust: int
 var booster_available: bool
+var time_to_booster: int
 var dust_booster_available: bool:
 	get:
 		return dust >= BOOSTER_COST
@@ -41,9 +44,27 @@ func _ready() -> void:
 	Storage.load_from_cache()
 	collection = Storage.get_collection()
 	dust = Storage.get_value(DUST_KEY, 0)
-	var last_bootser_date = Storage.get_value(LAST_BOOSTER_DATE_KEY)
-	booster_available = last_bootser_date == null || _compare_dates(last_bootser_date, Time.get_date_dict_from_system())
+	_update_timer()
 
+func _update_timer():
+	var last_bootser_sec = Storage.get_value(LAST_BOOSTER_DATE_KEY)
+	if last_bootser_sec == null:
+		last_bootser_sec = 0.0
+	var next_bootser_sec = _get_next_day(last_bootser_sec)
+	var now_sec = Time.get_unix_time_from_system()
+	time_to_booster = next_bootser_sec - now_sec
+	booster_available = time_to_booster <= 0
+
+
+func _get_next_day(sec: float) -> float:
+	var next_day_sec = sec + SECS_PER_DAY
+	var date = Time.get_datetime_dict_from_unix_time(next_day_sec)
+	date["hour"] = 0
+	date["minute"] = 0
+	date["second"] = 0
+	next_day_sec = Time.get_unix_time_from_datetime_dict(date)
+	next_day_sec -= Time.get_time_zone_from_system().bias * 60
+	return next_day_sec
 
 # logic
 
@@ -146,8 +167,9 @@ func _mutate(is_free: bool, cards: Array, dust_diff: int):
 		dust_update.emit()
 	
 	if is_free:
-		booster_available = false
-		Storage.set_value(LAST_BOOSTER_DATE_KEY, Time.get_date_dict_from_system())
+		print(Time.get_datetime_dict_from_system())
+		Storage.set_value(LAST_BOOSTER_DATE_KEY, Time.get_unix_time_from_system())
+		_update_timer()
 		booster_update.emit()
 	
 	Storage.save_to_cache()
@@ -166,8 +188,8 @@ func add_dust(count: int):
 
 
 func allow_bootser(allow: bool):
-	booster_available = allow
-	Storage.set_value(LAST_BOOSTER_DATE_KEY, Time.get_date_dict_from_unix_time(0) if allow else Time.get_date_dict_from_system())
+	Storage.set_value(LAST_BOOSTER_DATE_KEY, 0.0 if allow else Time.get_unix_time_from_system())
+	_update_timer()
 	Storage.save_to_cache()
 	
 	booster_update.emit()
@@ -175,9 +197,9 @@ func allow_bootser(allow: bool):
 func burn_collection():
 	collection = []
 	dust = 0
-	booster_available = true
 	Storage.clear_cache()
 	Storage.save_to_cache()
+	_update_timer()
 	
 	collection_update.emit()
 	dust_update.emit()
