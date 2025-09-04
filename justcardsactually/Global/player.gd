@@ -57,7 +57,7 @@ func _update_timer():
 
 
 func _get_next_day(sec: float) -> float:
-	var next_day_sec = sec + SECS_PER_DAY
+	var next_day_sec = sec + SECS_PER_DAY + Time.get_time_zone_from_system().bias * 60
 	var date = Time.get_datetime_dict_from_unix_time(next_day_sec)
 	date["hour"] = 0
 	date["minute"] = 0
